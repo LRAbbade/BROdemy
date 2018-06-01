@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRODemy</title>
+    <script src="js/jquery-2.2.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/updateText.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- bootstrap - link cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- carregando icones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- incluindo css -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- materialize -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <link rel="icon" href="./images/bro_icon.png">
+</head>
+<body>
+<div id="top-bar">
+    <!--Main logo of website-->
+    <div class="logo">
+        <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
+    </div>
+    <!--Main maineu of website-->
+    <div class="main-menu">
+        <ul>
+            <li>Catálogo
+                <ul class="sub-menu">
+                    <li>Software
+                        <ul class="sub-menu-1">
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>Javascript</li>
+                            <li>BIRL</li>
+
+                        </ul>
+                    </li>
+                    <li>Banco De Dados
+                        <ul class="sub-menu-1">
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </li>
+                    <li>Engenharia
+                        <ul class="sub-menu-1">
+                            <li>Cálculo</li>
+                            <li>Física</li>
+                            <li>Eletrônica</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--search bar of website-->
+    <div class="search-box">
+        <input type="text" placeholder="Buscar">
+        <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
+
+        <% if(user.autorizado){ %>
+        <input class="top-bar-btn" type="button" name="account-btn" value="Tornece um instrutor">
+        <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
+        <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
+        <% } else { %>
+        <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
+               onclick="window.location='/login';">
+        <% } %>
+    </div>
+</div>
+<div class="container">
+    <form action="/register_user" method="post">
+        <div class="jumbotron center-align" id="formulario">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" name="name" type="text" value="<%= student.name %>" class="validate">
+                        <label class="active" for="name">Nome</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input id="password" name="password" type="password" value="<%= student.password %>"
+                               class="validate">
+                        <label class="active" for="password">password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" name="email" type="email" value="<%= student.nome %>" class="validate">
+                        <label class="active" for="email">Email</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Cadastrar</button>
+            <div class="space divider"></div>
+            <p class="space center-align">Já tem uma conta?<a href="/login">Fazer Login</a></p>
+        </div>
+
+
+    </form>
+</div>
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

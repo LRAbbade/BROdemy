@@ -1,0 +1,33 @@
+{
+  "name": "brodemy",
+  "version": "1.0.0",
+  "description": "site de compras do walmart",
+  "main": "eng_software.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mazzon",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "ejs": "^2.5.7",
+    "express": "^4.16.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "mongodb": "^2.2.33",
+    "mysql": "^2.14.1",
+    "nodemon": "^1.12.1",
+    "npm-git-install": "^0.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FilipeMazzon/Walmart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FilipeMazzon/Walmart/issues"
+  },
+  "homepage": "https://github.com/FilipeMazzon/Walmart#readme"
+}

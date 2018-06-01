@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #C9CAD9;
+}
+
+#header {
+    background-color: #F8F1FF;
+    width: 100%;
+    height: 52px;
+    border-top: 5px solid #7cdfff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.logo img {
+    float: left;
+    width: 80px;
+    height: 100%;
+    margin: 10px 20px;
+}
+
+.main-menu {
+    float: left;
+    width: 100px;
+    height: 45px;
+    background-color: #F8F1FF;
+}
+
+.main-menu ul li:hover {
+    background-color: #F8F1FF;
+}
+
+.main-menu ul {
+    list-style-type: none;
+}
+
+.main-menu ul li {
+    width: 100px;
+    display: block;
+    height: 47px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: #F8F1FF;
+}
+
+.main-menu ul li ul {
+    display: none;
+    margin-top: 15px;
+    width: 00px;
+    clear: both;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-menu ul li:hover ul {
+    display: block;
+}
+
+.container {
+
+}
+
+.containerFooter{
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 70%;
+    }
+}
+#formulario {
+    margin-top: 30px;
+}
+
+.space {
+    margin-top: 15px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.main-menu ul li .sub-menu {
+    position: absolute;
+    border-top: 2px solid #7CDfff;
+    width: 240px;
+}
+
+.main-menu ul li ul li {
+    display: block;
+    padding-left: 10px;
+    text-align: left;
+    width: 240px;
+    height: 40px;
+}
+
+.main-menu ul li:hover ul li ul {
+    display: none;
+}
+
+.main-menu ul li:hover .sub-menu li:hover {
+    background-color: #F8F1FF;
+}
+
+.main-menu ul li:hover .sub-menu li:hover {
+    box-shadow: 0px 0px 1px 2px #888888;
+}
+
+.main-menu ul li:hover .sub-menu li:hover .sub-menu-1 {
+
+    display: block;
+    float: right;
+    margin-left: 10px;
+    margin-top: -16px;
+    padding: 0px;
+    box-shadow: 0px 0px 2px 2px #888888;
+}
+
+.search-box input[type="text"] {
+    margin: 5px 10px 5px 20px;
+    height: 36px;
+    width: 50%;
+    background-color: #F8F8FF;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.top-bar-btn {
+    font-size: 14px;
+    border-radius: 8px;
+    margin: 5px 10px 0px 10px;
+    padding: 8px 20px 8px 20px;
+    float: right;
+    background-color: #F8F8FF;
+}
+.buttonEveryWhere {
+    background-color: #F8F8FF;
+}
+
+#search-button {
+    float: none;
+}
+
+.course-display {
+    background-color: #F8F1FF;
+    max-width: 1024px;
+    width: 50%;
+    margin: 50px auto;
+    overflow: auto;
+}
+
+.course-img {
+    float: left;
+    height: 100%;
+}
+
+.course-content {
+    overflow: hidden;
+}
+
+.course-content p {
+    padding: 10px 10px 10px 20px;
+}
+
+#top-bar + h2 {
+    margin: 70px 0;
+    text-align: center;
+    color: #C33C54;
+}
