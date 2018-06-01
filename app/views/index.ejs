@@ -53,7 +53,7 @@
             <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
 
             <% if(user.autorizado){ %>
-            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta" onclick="window.location='/my_accout';">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta" onclick="window.location='/my_account';">
             <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos" onclick="window.location='/my_courses';">
             <% } else { %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
@@ -74,8 +74,7 @@
         </div>
     </div>
     <% } %>
-    <% }else { %>
-
+    <% }else { %> 
     <p> Nenhum curso cadastrado</p>
     <% } %>
 </div>
