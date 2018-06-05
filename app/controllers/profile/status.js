@@ -1,3 +1,3 @@
 module.exports.show = function (application, req, res) {
-    res.render("home/profile", {user: req.session.data});
+    res.render("profile/status", {user: req.session.data});
 };

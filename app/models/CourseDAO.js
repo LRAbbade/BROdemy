@@ -23,7 +23,6 @@ CourseDAO.prototype.getCourses = function (req, res) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find().toArray(function (mongoError, result) {
-                console.log(result);
                 if (typeof req.session.data === "undefined") {
                     res.render("index", {courses: result, user: {}});
                 } else {

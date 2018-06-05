@@ -1,5 +1,5 @@
 module.exports.form = function (application, req, res) {
-    res.render("home/login", {validacao: {}, login: {},user:{}});
+    res.render("login", {validacao: {}, login: {},user:{}});
 };
 module.exports.check = function (application, req, res) {
     let data = req.body;

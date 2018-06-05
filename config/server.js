@@ -10,6 +10,7 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
 function changeUndefined(req, res,next) {
+    console.log(req.session.data);
     if (typeof req.session.data === "undefined") {
         req.session.data = {
             autorizado: false
@@ -17,7 +18,6 @@ function changeUndefined(req, res,next) {
     }
     next();
 }
-
 app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator());

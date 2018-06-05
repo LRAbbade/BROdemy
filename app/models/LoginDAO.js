@@ -17,12 +17,14 @@ LoginDAO.prototype.check = function (data, req, res) {
                         }], login: data
                     });
                 } else {
+                    req.session.autorizado = true;
                     req.session.data = {
                         autorizado: true,
                         _id: result[0]._id,
                         email: result[0].email,
                         name: result[0].name,
-                        courses: result[0].courses
+                        courses: result[0].courses,
+                        password: result[0].password
                     };
 
                     console.log(req.session);
@@ -40,31 +42,28 @@ LoginDAO.prototype.createUser = function (data) {
         mongoclient.collection("user", function (err, collection) {
             collection.count({email: data.user}, function (err, count) {
                 if (err) throw err;
-                if (count <= 0) {
+                if (count === 0) {
                     collection.insertOne(data);
                 }
                 else {
-                    res.render("cadastro", {
+                    res.render("register/user", {
                         validacao: [{
                             "msg": "Email ja cadastrado",
-                            "param": {},
-                            "value": {},
-                            "location": {},
-                            "nestedErrors": {}
                         }], cadastro: data
                     });
                 }
                 mongoclient.close();
             });
-
         });
     });
 };
-LoginDAO.prototype.EditUser = function (dataAfter, dataBefore) {
+LoginDAO.prototype.editPassword = function (req, res, dataBefore, dataAfter) {
     this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
-            console.log(studentName);
-            collection.update({id: dataBefore}, dataAfter, {upsert: true});
+            if (err) throw err;
+            req.session.data.password = dataAfter;
+            collection.update({id: dataBefore}, req.session.data, {upsert: true});
             mongocliente.close();
         });
     });
