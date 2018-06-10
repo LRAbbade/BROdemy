@@ -26,11 +26,9 @@ LoginDAO.prototype.check = function (data, req, res) {
                         courses: result[0].courses,
                         password: result[0].password
                     };
+                    //console.log(req.session);
+                    res.redirect("/");
 
-                    console.log(req.session);
-                    if (req.session.data.autorizado) {
-                        res.redirect("/");
-                    }
                 }
             });
             mongoclient.close();

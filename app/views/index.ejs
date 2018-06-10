@@ -5,14 +5,15 @@
     <title>BRODemy</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="./images/bro_icon.png">
-    
+
 </head>
 <body>
 <div id="header">
     <div id="top-bar">
         <!--Main logo of website-->
         <div class="logo">
-            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100" onclick="window.location='/';">
+            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100"
+                 onclick="window.location='/';">
         </div>
         <!--Main maineu of website-->
         <div class="main-menu">
@@ -49,12 +50,15 @@
         </div>
         <!--search bar of website-->
         <div class="search-box">
-            <input type="text" placeholder="Buscar">
-            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-
+            <form action="/course_search" method="post">
+                <input name="toSearch" type="text" placeholder="Buscar">
+                <input id="search-button" class="top-bar-btn" type="submit">
+            </form>
             <% if(user.autorizado){ %>
-            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta" onclick="window.location='/my_account';">
-            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos" onclick="window.location='/my_courses';">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+                   onclick="window.location='/my_account';">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+                   onclick="window.location='/my_courses';">
             <% } else { %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
                    onclick="window.location='/login';">
@@ -74,7 +78,7 @@
         </div>
     </div>
     <% } %>
-    <% }else { %> 
+    <% }else { %>
     <p> Nenhum curso cadastrado</p>
     <% } %>
 </div>

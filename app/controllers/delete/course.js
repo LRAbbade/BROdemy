@@ -7,3 +7,10 @@ module.exports.select = function (application, req, res) {
 module.exports.conclude = function (application, req, res) {
 
 };
+module.exports.drop = function (application, req, res) {
+    let data = req.params;
+    var connection = application.config.dbConnection;
+    var courseDAO = new application.app.models.CourseDAO(connection);
+
+    courseDAO.deleteCourse(data);
+};

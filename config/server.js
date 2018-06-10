@@ -1,16 +1,15 @@
-var express = require('express');
-var consign = require('consign');
-var bodyParser = require('body-parser');
-var expressValidator = require('express-validator');
-var expressSession = require('express-session');
+const express = require('express'),
+    consign = require('consign'),
+    bodyParser = require('body-parser'),
+    expressValidator = require('express-validator'),
+    cors = require('cors'),
+    expressSession = require('express-session');
 
-var app = express();
-
+let app = express();
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
-function changeUndefined(req, res,next) {
-    console.log(req.session.data);
+function changeUndefined(req, res, next) {
     if (typeof req.session.data === "undefined") {
         req.session.data = {
             autorizado: false
@@ -18,6 +17,8 @@ function changeUndefined(req, res,next) {
     }
     next();
 }
+
+app.use(cors());
 app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator());
@@ -33,5 +34,4 @@ consign()
     .then('app/models')
     .then('app/controllers')
     .into(app);
-
 module.exports = app;
