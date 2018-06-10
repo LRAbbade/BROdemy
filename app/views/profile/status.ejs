@@ -74,33 +74,56 @@
             <% } %>
         </div>
     </div>
-
+    <% if(validacao.length > 0){ %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <strong><%= validacao[0].msg %></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
     <div class="container">
         <div class="jumbotron center-align" id="formulario">
             <div class="txt">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <p>nome:<%=user.name%></p>
+                        <p>nome:<%= user.name %></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
-                        <p>nome:<%=user.email%></p>
+                        <p>nome:<%= user.email %></p>
                     </div>
                     <div class="input-field col s6">
-                        <button class="btn   blue darken-2 center" id="Login" onclick="window.location='/change_email';">change email</button>
+                        <button class="btn   blue darken-2 center" id="Login"
+                                onclick="window.location='/change_email';">change email
+                        </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <button class="btn   blue darken-2 center" id="Login" onclick="window.location='/change_password';">change password</button>
+                        <button class="btn   blue darken-2 center" id="Login"
+                                onclick="window.location='/change_password';">change password
+                        </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <button class="btn   blue darken-2 center" id="Login" onclick="window.location='/logout';">logout</button>
+                        <button class="btn   blue darken-2 center" id="Login"
+                                onclick="window.location='/delete_account';">delete account
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn   blue darken-2 center" id="Login" onclick="window.location='/logout';">
+                            logout
+                        </button>
                     </div>
                 </div>
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Aula</title>
+    <link rel="stylesheet" type="text/css" href="./css/register_class_style.css">
+</head>
+<body>
+<div id="header">
+    <div id="top-bar">
+        <!--Main logo of website-->
+        <div class="logo">
+            <img src="./images/logo_horizontal.png"
+                 alt="brodemy" title="brodemy logo" width="100">
+        </div>
+        <!--Main maineu of website-->
+        <div class="main-menu">
+            <ul>
+                <li>Catálogo
+                    <ul class="sub-menu">
+                        <li>Software
+                            <ul class="sub-menu-1">
+                                <li>C++</li>
+                                <li>Java</li>
+                                <li>Python</li>
+                                <li>Javascript</li>
+                                <li>BIRL</li>
+
+                            </ul>
+                        </li>
+                        <li>Banco De Dados
+                            <ul class="sub-menu-1">
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </li>
+                        <li>Engenharia
+                            <ul class="sub-menu-1">
+                                <li>Cálculo</li>
+                                <li>Física</li>
+                                <li>Eletrônica</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--search bar of website-->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar">
+            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
+                   onclick="window.location='/login';">
+        </div>
+    </div>
+</div>
+<div class='info-box'>
+    <h2>{{OPERAÇÃO}} Aula</h2> <!-- registrar ou editar -->
+</div>
+<div class='info-box'>
+    <form action="" method="post">
+        <div>
+            <label>
+                Nome do curso da aula:
+                <input type="text" class='text-input-single-line' name="course_name" placeholder="nome do curso"
+                       required>
+            </label>
+        </div>
+        <div>
+            <label>
+                Número da aula:
+                <input type="text" class='text-input-single-line' name="aula_number" placeholder="número da aula"
+                       pattern="\d+" title="Número da aula deve ser um número" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                Nome da aula:
+                <input type="text" class='text-input-single-line' name="aula_name" placeholder="nome da aula" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                Descrição:
+                <textarea class='text-input-multiline' name="description" rows="5"></textarea>
+            </label>
+        </div>
+        <div>
+            <label>
+                Duração da aula (em minutos):
+                <input type="text" class='text-input-single-line' name="aula_duration"
+                       placeholder="duração da aula em minutos" pattern="\d+" title="Duração da aula deve ser um número"
+                       required>
+            </label>
+        </div>
+        <div>
+            <label>
+                URL da aula:
+                <input type="text" class='text-input-single-line' name="aula_url" placeholder="Link do vídeo no youtube"
+                       required>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="agreed" required>
+                Eu concordo com os termos de serviço do BRODemy
+            </label>
+        </div>
+        <button class='form-btn'>Submit</button>
+    </form>
+</div>
+</body>
+</html>

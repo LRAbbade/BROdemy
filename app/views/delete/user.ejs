@@ -74,51 +74,28 @@
     </div>
 </div>
 
-<% if(validacao.length > 0){ %>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-danger">
-                <strong><%= validacao[0].msg %></strong>
-            </div>
-        </div>
-    </div>
-</div>
-<% } %>
+    <div class="jumbotron center-align" id="formulario">
+        <form action="/delete_account" method="post">
+            <button type="submit" class="btn btn-default">sim</button>
 
-<div class="container">
-    <form action="/register_user" method="post">
-        <div class="jumbotron center-align" id="formulario">
+            <p class="center-align">Deseja mesmo deletar?</p>
             <div class="col-md-12">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" name="name" type="text" value="<%= student.name %>" class="validate">
-                        <label class="active" for="name">Nome</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" name="password" type="password" value="<%= student.password %>"
-                               minlength="5" maxlength="20"
-                               class="validate">
-                        <label class="active" for="password">password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" name="email" type="email" value="<%= student.email %>" class="validate">
-                        <label class="active" for="email">Email</label>
+                        <input id="password" name="password" type="password" class="validate">
+                        <label class="active" for="password">Nome</label>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-default">Cadastrar</button>
-            <div class="space divider"></div>
-            <p class="space center-align">Já tem uma conta?<a href="/login">Fazer Login</a></p>
-        </div>
-    </form>
+
+            <input class="top-bar-btn" type="button" name="account-btn" value="Não"
+                   onclick="window.location='/my_account';">
+        </form>
+    </div>
+
+
 </div>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>

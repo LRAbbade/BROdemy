@@ -8,8 +8,6 @@ module.exports.conclude = function (application, req, res, data) {
         duration : req.body.duration,
         url : "https://www.youtube.com/embed/"+ req.body.url
     };
-
-    console.log(info);
     var connection = application.config.dbConnection;
     var courseDAO = new application.app.models.CourseDAO(connection);
 
