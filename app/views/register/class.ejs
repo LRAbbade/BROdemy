@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Aula</title>
-    <link rel="stylesheet" type="text/css" href="./css/register_class_style.css">
+    <title>Cadastro de aula</title>
+    <link rel="stylesheet" type="text/css" href="../css/register_aula_style.css">
+    <link rel="icon" href="./images/bro_icon.png">
 </head>
 <body>
 <div id="header">
     <div id="top-bar">
         <!--Main logo of website-->
         <div class="logo">
-            <img src="./images/logo_horizontal.png"
-                 alt="brodemy" title="brodemy logo" width="100">
+            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
         </div>
         <!--Main maineu of website-->
         <div class="main-menu">
@@ -48,13 +48,21 @@
         </div>
         <!--search bar of website-->
         <div class="search-box">
-            <input type="text" placeholder="Buscar">
-            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor">
-            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
+            <form action="/course_search" method="post">
+                <input name="toSearch" type="text" placeholder="Buscar">
+                <input id="search-button" class="top-bar-btn" type="submit">
+            </form>
+            <% if(user.autorizado){ %>
+            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
+                   onclick="window.location='/my_couses_manage';">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+                   onclick="window.location='/my_account';">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+                   onclick="window.location='/my_courses';">
+            <% }else{ %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
                    onclick="window.location='/login';">
+            <% } %>
         </div>
     </div>
 </div>
@@ -62,25 +70,19 @@
     <h2>{{OPERAÇÃO}} Aula</h2> <!-- registrar ou editar -->
 </div>
 <div class='info-box'>
-    <form action="" method="post">
-        <div>
-            <label>
-                Nome do curso da aula:
-                <input type="text" class='text-input-single-line' name="course_name" placeholder="nome do curso"
-                       required>
-            </label>
-        </div>
+    <form action="/register_class/<%=course.id%>" method="post">
         <div>
             <label>
                 Número da aula:
-                <input type="text" class='text-input-single-line' name="aula_number" placeholder="número da aula"
-                       pattern="\d+" title="Número da aula deve ser um número" required>
+                <input type="text" class='text-input-single-line' name="number"
+                       placeholder="Usado para ordenar as aulas na página do curso (crescentemente)" pattern="\d+"
+                       title="Número da aula deve ser um número" required>
             </label>
         </div>
         <div>
             <label>
                 Nome da aula:
-                <input type="text" class='text-input-single-line' name="aula_name" placeholder="nome da aula" required>
+                <input type="text" class='text-input-single-line' name="name" placeholder="Nome da aula" required>
             </label>
         </div>
         <div>
@@ -92,21 +94,21 @@
         <div>
             <label>
                 Duração da aula (em minutos):
-                <input type="text" class='text-input-single-line' name="aula_duration"
-                       placeholder="duração da aula em minutos" pattern="\d+" title="Duração da aula deve ser um número"
+                <input type="text" class='text-input-single-line' name="duration"
+                       placeholder="Duração da aula em minutos" pattern="\d+" title="Duração da aula deve ser um número"
                        required>
             </label>
         </div>
         <div>
             <label>
                 URL da aula:
-                <input type="text" class='text-input-single-line' name="aula_url" placeholder="Link do vídeo no youtube"
+                <input type="text" class='text-input-single-line' name="url" placeholder="Link do vídeo no youtube"
                        required>
             </label>
         </div>
         <div>
             <label>
-                <input type="checkbox" name="agreed" required>
+                <input type="checkbox" required>
                 Eu concordo com os termos de serviço do BRODemy
             </label>
         </div>

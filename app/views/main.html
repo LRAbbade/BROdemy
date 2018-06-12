@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BRODemy</title>
+    <link rel="stylesheet" type="text/css" href="/Users/lucasabbade/Desktop/Inatel/EC206/brodemy_pages/main_style.css">
+    <link rel="icon" href="/Users/lucasabbade/Desktop/Inatel/EC206/brodemy/app/public/images/bro_icon.png">
+    
+</head>
+<body>
+    <div id="header">
+        <div id="top-bar">
+            <!--Main logo of website-->
+            <div class="logo">
+                <img src="/Users/lucasabbade/Desktop/Inatel/EC206/brodemy/app/public/images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100" onclick="window.location='/';">
+            </div>
+            <!--Main maineu of website-->
+            <div class="main-menu">
+                <ul>
+                    <li>Catálogo
+                        <ul class="sub-menu">
+                            <li>Software
+                                <ul class="sub-menu-1">
+                                    <li>C++</li>
+                                    <li>Java</li>
+                                    <li>Python</li>
+                                    <li>Javascript</li>
+                                    <li>BIRL</li>
+
+                                </ul>
+                            </li>
+                            <li>Banco De Dados
+                                <ul class="sub-menu-1">
+                                    <li>MySQL</li>
+                                    <li>PostgreSQL</li>
+                                    <li>MongoDB</li>
+                                </ul>
+                            </li>
+                            <li>Engenharia
+                                <ul class="sub-menu-1">
+                                    <li>Cálculo</li>
+                                    <li>Física</li>
+                                    <li>Eletrônica</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--search bar of website-->
+            <div class="search-box">
+                <input type="text" placeholder="Buscar">
+                <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
+                <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta" onclick="window.location='/my_account';">
+                <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos" onclick="window.location='/my_courses';">
+                <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
+                       onclick="window.location='/login';">
+            </div>
+        </div>
+    </div>
+    <div class="course-display">
+        <div class="course-img">
+            <img src="<%= courses[i].image_src %>" height="135" width="240">
+        </div>
+        <div class="course-content">
+            <h3 id="course-title">Título</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+    <div class="info-box">
+        <p id='no-courses-error'><strong>Nenhum curso encontrado</strong></p>
+    </div>
+</body>
+</html>

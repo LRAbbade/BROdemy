@@ -19,7 +19,7 @@
     "express-validator": "^4.2.1",
     "mongodb": "^2.2.33",
     "mysql": "^2.14.1",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.17.5",
     "npm-git-install": "^0.3.0"
   },
   "devDependencies": {},

@@ -9,7 +9,7 @@ module.exports.conclude = function (application, req, res) {
         courses: []
     };
     const connection = application.config.dbConnection;
-    const loginDAO = new application.app.models.LoginDAO(connection);
+    const userDAO = new application.app.models.UserDAO(connection);
 
-    loginDAO.createUser(data,res);
+    userDAO.createUser(data,res);
 };

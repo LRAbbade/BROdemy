@@ -20,57 +20,63 @@
     <link rel="icon" href="./images/bro_icon.png">
 </head>
 <body>
-<div id="top-bar">
-    <!--Main logo of website-->
-    <div class="logo">
-        <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
-    </div>
-    <!--Main maineu of website-->
-    <div class="main-menu">
-        <ul>
-            <li>Catálogo
-                <ul class="sub-menu">
-                    <li>Software
-                        <ul class="sub-menu-1">
-                            <li>C++</li>
-                            <li>Java</li>
-                            <li>Python</li>
-                            <li>Javascript</li>
-                            <li>BIRL</li>
+<div id="header">
+    <div id="top-bar">
+        <!--Main logo of website-->
+        <div class="logo">
+            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
+        </div>
+        <!--Main maineu of website-->
+        <div class="main-menu">
+            <ul>
+                <li>Catálogo
+                    <ul class="sub-menu">
+                        <li>Software
+                            <ul class="sub-menu-1">
+                                <li>C++</li>
+                                <li>Java</li>
+                                <li>Python</li>
+                                <li>Javascript</li>
+                                <li>BIRL</li>
 
-                        </ul>
-                    </li>
-                    <li>Banco De Dados
-                        <ul class="sub-menu-1">
-                            <li>MySQL</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                        </ul>
-                    </li>
-                    <li>Engenharia
-                        <ul class="sub-menu-1">
-                            <li>Cálculo</li>
-                            <li>Física</li>
-                            <li>Eletrônica</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <!--search bar of website-->
-    <div class="search-box">
-        <input type="text" placeholder="Buscar">
-        <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-
-        <% if(user.autorizado){ %>
-        <input class="top-bar-btn" type="button" name="account-btn" value="Tornece um instrutor">
-        <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-        <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
-        <% } else { %>
-        <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
-               onclick="window.location='/login';">
-        <% } %>
+                            </ul>
+                        </li>
+                        <li>Banco De Dados
+                            <ul class="sub-menu-1">
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </li>
+                        <li>Engenharia
+                            <ul class="sub-menu-1">
+                                <li>Cálculo</li>
+                                <li>Física</li>
+                                <li>Eletrônica</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--search bar of website-->
+        <div class="search-box">
+            <form action="/course_search" method="post">
+                <input name="toSearch" type="text" placeholder="Buscar">
+                <input id="search-button" class="top-bar-btn" type="submit">
+            </form>
+            <% if(user.autorizado){ %>
+            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
+                   onclick="window.location='/my_couses_manage';">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+                   onclick="window.location='/my_account';">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+                   onclick="window.location='/my_courses';">
+            <% }else{ %>
+            <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
+                   onclick="window.location='/login';">
+            <% } %>
+        </div>
     </div>
 </div>
 

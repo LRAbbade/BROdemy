@@ -3,9 +3,9 @@ module.exports.renderForm = function (application, req, res) {
 };
 module.exports.conclude = function (application, req, res) {
     const connection = application.config.dbConnection;
-    const loginDAO = new application.app.models.LoginDAO(connection);
+    const userDAO = new application.app.models.UserDAO(connection);
 
-    loginDAO.deleteUser(req.session.data);
+    userDAO.deleteUser(req.session.data);
     req.session.data = {
         autorizado : false
     };

@@ -170,27 +170,18 @@ input::-webkit-input-placeholder {
 }
 
 .text-input-single-line {
-	width: 500px;
+	width: 700px;
 	height: 30px;
 	margin: 0px 10px;
-}
-
-#thumbnail-input {
-	width: 465px;			/* 465px é migué pra deixar um embaixo do outro */
+	float: right;
 }
 
 .text-input-multiline {
 	vertical-align: top;
-	margin: 0px 53px;		/* 53px é migué pra deixar um embaixo do outro */
 	font-size: 16px;
-	width: 500px;
-}
-
-#requisites-box {
-	vertical-align: top;
-	margin: 15px 10px 0px 10px;
-	font-size: 16px;
-	width: 635px;
+	margin: 0px 10px;
+	width: 700px;
+	float: right;
 }
 
 .form-btn {

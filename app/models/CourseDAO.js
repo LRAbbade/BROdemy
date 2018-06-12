@@ -4,23 +4,42 @@ function CourseDAO(connection) {
     this._connection = connection();
 }
 
-CourseDAO.prototype.register = function (Course) {
+CourseDAO.prototype.register = function (course, res) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.insert(Course);
+            collection.count({name: course.name}, function (err, count) {
+                if (err) throw err;
+                if (count === 0) {
+                    collection.insert(course);
+                    collection.find(course).toArray(function (mongoError, result) {
+                        res.redirect('/course/' + result[0]._id);
+                    });
+                }
+                else {
+                    res.render("register/user", {
+                        validacao: [{
+                            "msg": "O nome deste custo ja existe",
+                        }],
+                        course: course,
+                        user: {}
+                    });
+                }
+            });
             mongoclient.close();
         });
     });
+    res.redirect('/course/' + course.name)
 };
-//incompleto
-CourseDAO.prototype.addNewClass = function (course, classe) {
+CourseDAO.prototype.addNewClass = function (course, classe, res) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.find({_id: objectId(course._id)}).toArray(function (mongoError, result) {
+            collection.find({_id: objectId(course.id)}).toArray(function (mongoError, result) {
+                if (mongoError) throw  mongoError;
                 let data = result[0];
                 data.classes.push(classe);
                 collection.update({_id: objectId(result[0]._id)}, data, {upsert: true});
                 mongoclient.close();
+                res.redirect('/course/' + course.id);
             })
         });
     });
@@ -43,6 +62,7 @@ CourseDAO.prototype.deleteClass = function (toDelete, info) {
         });
     });
 };
+//don't work yet
 CourseDAO.prototype.editClass = function (toDelete, info) {
     let toDel = objectId(toDelete._id);
     this._connection.open(function (err, mongoclient) {
@@ -66,12 +86,7 @@ CourseDAO.prototype.findCourses = function (req, res, data) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find(data).toArray(function (mongoError, result) {
-                if (typeof req.session.data === "undefined") {
-                    //  res.render("courses", {courses: result, user: {}});
-                } else {
-                    //res.render("courses", {courses: result, user: req.session.data});
-                }
-                res.send(result);
+                res.render("search/course", {courses: result, user: req.session.data});
             });
             mongoclient.close();
         });

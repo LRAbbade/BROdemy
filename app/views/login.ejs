@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>Datian Main</title>
     <script src="js/jquery-2.2.1.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/sidenav.js"></script>
-    <script src="js/updateText.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- bootstrap - link cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -15,8 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- incluindo css -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- materialize -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+
     <link rel="icon" href="./images/bro_icon.png">
 </head>
 <body>
@@ -24,7 +21,8 @@
     <div id="top-bar">
         <!--Main logo of website-->
         <div class="logo">
-            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
+            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100"
+                 onclick="window.location='/';">
         </div>
         <!--Main maineu of website-->
         <div class="main-menu">
@@ -61,21 +59,24 @@
         </div>
         <!--search bar of website-->
         <div class="search-box">
-            <input type="text" placeholder="Buscar">
-            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-
+            <form action="/course_search" method="post">
+                <input name="toSearch" type="text" placeholder="Buscar">
+                <input id="search-button" class="top-bar-btn" type="submit">
+            </form>
             <% if(user.autorizado){ %>
-            <input class="top-bar-btn" type="button" name="account-btn" value="Tornece um instrutor">
-            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
-            <% } else { %>
+            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
+                   onclick="window.location='/my_couses_manage';">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+                   onclick="window.location='/my_account';">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+                   onclick="window.location='/my_courses';">
+            <% }else{ %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
                    onclick="window.location='/login';">
             <% } %>
         </div>
     </div>
 </div>
-
 
 <% if(validacao.length > 0){ %>
 <div class="container">
