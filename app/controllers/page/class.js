@@ -3,6 +3,7 @@ module.exports.renderClass = function (application, req, res) {
     const connection = application.config.dbConnection;
     const courseDAO = new application.app.models.CourseDAO(connection);
 
-    res.render("delete/user", {user: req.session.data});
+    courseDAO.checkOwnerOfCourse(data);
+
 };
 

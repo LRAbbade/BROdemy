@@ -1,5 +1,5 @@
 module.exports = function (application) {
-    application.get('/register_class/:id', function (req, res) {
+    application.get('/register_class/:_id', function (req, res) {
         if (!req.session.data.autorizado) {
             res.redirect('/login');
         } else {
@@ -12,7 +12,7 @@ module.exports = function (application) {
                     res.redirect(url);
                 }*/
     });
-    application.post('/register_class/:id', function (req, res) {
+    application.post('/register_class/:_id', function (req, res) {
         if (!req.session.data.autorizado) {
             res.redirect('/login');
         } else {

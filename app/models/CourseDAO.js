@@ -4,58 +4,70 @@ function CourseDAO(connection) {
     this._connection = connection();
 }
 
-CourseDAO.prototype.register = function (course, res) {
+
+CourseDAO.prototype.checkAlreadyHaveThisCourse = function (course, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.count({name: course.name}, function (err, count) {
                 if (err) throw err;
-                if (count === 0) {
-                    collection.insert(course);
-                    collection.find(course).toArray(function (mongoError, result) {
-                        res.redirect('/course/' + result[0]._id);
-                    });
-                }
-                else {
-                    res.render("register/user", {
-                        validacao: [{
-                            "msg": "O nome deste custo ja existe",
-                        }],
-                        course: course,
-                        user: {}
-                    });
-                }
+                callback(count);
+            });
+            mongoclient.close()
+        });
+    });
+
+};
+CourseDAO.prototype.register = function (course, callback) {
+    this._connection.open(function (err, mongoclient) {
+        mongoclient.collection("course", function (err, collection) {
+            collection.insert(course);
+            collection.find(course).toArray(function (mongoError, result) {
+                callback(result);
             });
             mongoclient.close();
         });
     });
-    res.redirect('/course/' + course.name)
+
+
 };
-CourseDAO.prototype.addNewClass = function (course, classe, res) {
+CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
+    console.log(data);
+    this._connection.open(function (err, mongoclient) {
+        mongoclient.collection("course", function (err, collection) {
+            collection.find({_id: objectId(data._id)}).toArray(function (mongoError, result) {
+                if (mongoError) throw  mongoError;
+                console.log(result);
+                callback(result);
+            });
+        });
+    });
+};
+/*CourseDAO.prototype.addNewClass = function (data, course, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: objectId(course.id)}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
+            });
+        });
+    });
+
                 let data = result[0];
                 data.classes.push(classe);
                 collection.update({_id: objectId(result[0]._id)}, data, {upsert: true});
+                callback();
                 mongoclient.close();
-                res.redirect('/course/' + course.id);
-            })
-        });
-    });
-};
+
+};*/
 CourseDAO.prototype.deleteClass = function (toDelete, info) {
     let toDel = objectId(toDelete._id);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: toDel}).toArray(function (mongoError, result) {
                 let data = result[0];
-                console.log(data.classes);
                 var removed = data.classes.filter(function (el) {
                     return el.number !== info.number;
                 });
                 data.classes = JSON.stringify(removed, null, ' ');
-                console.log(data);
                 collection.update({_id: objectId(result[0]._id)}, data, {upsert: true});
                 mongoclient.close();
             })
@@ -82,11 +94,11 @@ CourseDAO.prototype.editClass = function (toDelete, info) {
     });
 };
 
-CourseDAO.prototype.findCourses = function (req, res, data) {
+CourseDAO.prototype.findCourses = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find(data).toArray(function (mongoError, result) {
-                res.render("search/course", {courses: result, user: req.session.data});
+                callback(result);
             });
             mongoclient.close();
         });
@@ -130,25 +142,21 @@ CourseDAO.prototype.editCourse = function (req, res, data) {
 
 };
 
-CourseDAO.prototype.getCourses = function (req, res) {
+CourseDAO.prototype.getCourses = function (callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find().toArray(function (mongoError, result) {
-                if (typeof req.session.data === "undefined") {
-                    res.render("index", {courses: result, user: {}});
-                } else {
-                    res.render("index", {courses: result, user: req.session.data});
-                }
+                callback(result);
             });
             mongoclient.close();
         });
     });
 };
-CourseDAO.prototype.getCourse = function (course, req, res) {
+CourseDAO.prototype.getCourse = function (course, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: objectId(course._id)}).toArray(function (mongoError, result) {
-                res.render("main", {courses: result});
+                callback(result);
             });
             mongoclient.close();
         });

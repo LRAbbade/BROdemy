@@ -22,7 +22,9 @@
     "nodemon": "^1.17.5",
     "npm-git-install": "^0.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ws": "3.3.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/FilipeMazzon/Walmart.git"

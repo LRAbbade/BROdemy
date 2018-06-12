@@ -28,65 +28,31 @@ UserDAO.prototype.changeEmail = function (req, res, data) {
         });
     });
 };
-UserDAO.prototype.check = function (data, req, res) {
+UserDAO.prototype.check = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
             collection.find(data).toArray(function (mongoError, result) {
-                if (result.length === 0) {
-                    res.render("login", {
-                        validacao: [{
-                            "msg": "login ou senha invalida"
-                        }],
-                        login: data,
-                        user: {}
-                    });
-                } else {
-                    req.session.data = {
-                        autorizado: true,
-                        _id: result[0]._id,
-                        email: result[0].email,
-                        name: result[0].name,
-                        courses: result[0].courses,
-                        password: result[0].password
-                    };
-                    res.redirect("/");
-                }
+                callback(result)
             });
             mongoclient.close();
         });
     });
 };
-UserDAO.prototype.createUser = function (data, res) {
+UserDAO.prototype.createUser = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
             collection.count({email: data.email}, function (err, count) {
                 if (err) throw err;
-                if (count === 0) {
-                    collection.insertOne(data);
-                    res.render("login", {validacao: {}, login: data, user: {}});
-                }
-                else {
-                    res.render("register/user", {
-                        validacao: [{
-                            "msg": "Email ja cadastrado",
-                        }],
-                        student: data,
-                        user: {}
-                    });
+                if (!count) {
+                    collection.insert(data);
                 }
                 mongoclient.close();
+                callback(count);
             });
         });
     });
 };
-UserDAO.prototype.editPassword = function (req, res, dataAfter) {
-    let data = objectId(req.session.data._id);
-    let after = {
-        email: req.session.data.email,
-        name: req.session.data.name,
-        courses: req.session.data.courses,
-        password: dataAfter
-    };
+UserDAO.prototype.editPassword = function (dataAfter, after, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
@@ -97,11 +63,6 @@ UserDAO.prototype.editPassword = function (req, res, dataAfter) {
             mongocliente.close();
         });
     });
-};
-
-
-UserDAO.prototype.showMyCourses = function (req, res) {
-
 };
 UserDAO.prototype.deleteUser = function (data) {
     let info = objectId(data._id);
@@ -117,6 +78,31 @@ UserDAO.prototype.deleteUser = function (data) {
         });
     });
 };
+
+UserDAO.prototype.showMyCourses = function (user, callback) {
+    this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
+        mongocliente.collection("user", function (err, collection) {
+            if (err) throw err;
+            collection.find({_id: objectId(user._id)}).toArray(function (err, result) {
+                callback(result[0].courses);
+            });
+            mongocliente.close();
+        });
+    });
+};
+UserDAO.prototype.registerOnCourse = function (course, data) {
+    this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
+        mongocliente.collection("user", function (err, collection) {
+            let aux = data;
+            aux.courses.push(course._id);
+            collection.update({email: data.email}, aux, {upsert: true});
+            mongocliente.close();
+        });
+    });
+};
+
 
 module.exports = function () {
     return UserDAO;

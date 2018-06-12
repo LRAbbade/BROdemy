@@ -3,5 +3,7 @@ module.exports.course = function (application, req, res) {
     var connection = application.config.dbConnection;
     var courseDAO = new application.app.models.CourseDAO(connection);
 
-    courseDAO.findCourses(req, res, data);
+    courseDAO.findCourses(data, function (result) {
+        res.render("search/course", {courses: result, user: req.session.data});
+    });
 };

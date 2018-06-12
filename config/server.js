@@ -12,7 +12,8 @@ app.set('views', './app/views');
 function changeUndefined(req, res, next) {
     if (typeof req.session.data === "undefined") {
         req.session.data = {
-            autorizado: false
+            autorizado: false,
+            _id:{}
         };
     }
     next();
