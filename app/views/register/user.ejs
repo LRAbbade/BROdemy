@@ -2,21 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BRODemy</title>
+    <title>Cadastro</title>
     <script src="js/jquery-2.2.1.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/sidenav.js"></script>
-    <script src="js/updateText.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- bootstrap - link cdn -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/register_user_style.css">
     <!-- carregando icones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- incluindo css -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- materialize -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
     <link rel="icon" href="./images/bro_icon.png">
 </head>
 <body>
@@ -24,7 +16,8 @@
     <div id="top-bar">
         <!--Main logo of website-->
         <div class="logo">
-            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100">
+            <img src="./images/logo_horizontal.png" alt="brodemy" title="brodemy logo" width="100"
+                 onclick="window.location='/';">
         </div>
         <!--Main maineu of website-->
         <div class="main-menu">
@@ -80,52 +73,41 @@
     </div>
 </div>
 
-<% if(validacao.length > 0){ %>
-<div class="container">
+<div class="info-box">
     <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-danger">
-                <strong><%= validacao[0].msg %></strong>
-            </div>
-        </div>
+        <i class="material-icons prefix">account_circle</i>
+        <label class="input-label">Nome:
+            <input class="text-input-single-line" name="name" type="text"
+                   value="<%= student.name %>">
+        </label>
     </div>
+    <div class="row">
+        <i class="material-icons prefix">vpn_key</i>
+        <label class="input-label">Senha:
+            <input class="text-input-single-line" name="password" type="password"
+                   value="<%= student.password %>" minlength="5" maxlength="20">
+        </label>
+    </div>
+    <div class="row">
+        <i class="material-icons prefix">email</i>
+        <label class="input-label">E-mail:
+            <input class="text-input-single-line" name="email" type="email"
+                   value="<%= student.email %>">
+        </label>
+    </div>
+    <div class="row">
+        <button type="submit" class="std-btn">Cadastrar</button>
+    </div>
+    <div class="row">
+        <p>Já tem uma conta? <a href="/login">Fazer Login</a></p>
+    </div>
+</div>
+
+<% if(validacao.length > 0){ %>
+<div class="info-box">
+    <p id="no-courses-error"><strong><%= validacao[0].msg %></strong></p>
 </div>
 <% } %>
 
-<div class="container">
-    <form action="/register_user" method="post">
-        <div class="jumbotron center-align" id="formulario">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="name" name="name" type="text" value="<%= student.name %>" class="validate">
-                        <label class="active" for="name">Nome</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" name="password" type="password" value="<%= student.password %>"
-                               minlength="5" maxlength="20"
-                               class="validate">
-                        <label class="active" for="password">password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" name="email" type="email" value="<%= student.email %>" class="validate">
-                        <label class="active" for="email">Email</label>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-default">Cadastrar</button>
-            <div class="space divider"></div>
-            <p class="space center-align">Já tem uma conta?<a href="/login">Fazer Login</a></p>
-        </div>
-    </form>
-</div>
-<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
