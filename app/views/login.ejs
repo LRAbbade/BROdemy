@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Datian Main</title>
+    <title>Login</title>
     <script src="js/jquery-2.2.1.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- bootstrap - link cdn -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/login_style.css">
     <!-- carregando icones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- incluindo css -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <link rel="icon" href="./images/bro_icon.png">
+    <link rel="icon" href="../images/bro_icon.png">
 </head>
 <body>
 <div id="header">
@@ -78,44 +73,34 @@
     </div>
 </div>
 
-<% if(validacao.length > 0){ %>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-danger">
-                <strong><%= validacao[0].msg %></strong>
-            </div>
-        </div>
-    </div>
-</div>
-<% } %>
-
-<div class="container">
+<div class="info-box">
     <form action="/login" method="post">
-        <div class="jumbotron center-align" id="formulario">
-            <div class="txt">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="email" name="email" type="email" value="<%= login.email %>" class="validate">
-                        <label class="active" for="email">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" name="password" type="password" value="<%= login.password %>"
-                               class="validate">
-                        <label class="active" for="pwd">password</label>
-                    </div>
-                </div>
-
-            </div>
-            <button type="submit" class="btn   blue darken-2 center" id="Login">Login</button>
-            <div class="space divider"></div>
-            <p class="space center-align">não tem uma conta?<a href="/register_user">cadastre-se</a></p>
+        <div class="row">
+            <i class="material-icons prefix">account_circle</i>
+            <label class="input-label">E-mail:
+                <input class="text-input-single-line" name="email" type="email" value="<%= login.email %>">
+            </label>
+        </div>
+        <div class="row">
+            <i class="material-icons prefix">vpn_key</i>
+            <label class="input-label">Senha:
+                <input class="text-input-single-line" name="password" type="password" value="<%= login.password %>">
+            </label>
+        </div>
+        <div class="row">
+            <button type="submit" class="std-btn">Login</button>
+        </div>
+        <div class="row">
+            <p>Não tem uma conta? <a href="/register_user">cadastre-se</a></p>
         </div>
     </form>
 </div>
+
+<% if(validacao.length > 0){ %>
+<div class="info-box">
+    <p id="no-courses-error"><strong><%= validacao[0].msg %></strong></p>
+</div>
+<% } %>
+
 </body>
 </html>
