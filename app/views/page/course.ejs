@@ -29,19 +29,16 @@
 </div>
 <% for(let i = 0;i < course.classes.length; i++){ %>
 <div class="class-display" onclick="window.location ='/course/<%= course._id %>/<%= course.classes[i].number %>'">
-    <%=course._id%>
-    <%=course.classes[i].number%>
-    <h3><%= course.classes[i].name %></h3>
-    <p><%= course.classes[i].description %></p>
-    <p id="class-duration">Duração da aula: <%= course.classes[i].duration %> minutos.</p>
     <% if(user._id == course.instructor_id){ %>
         <div class="row">
             <form action="/delete_class/<%=course._id%>/<%=course.classes[i].name%>'" method="post">
-                <button class="std-btn" type="submit" >Deletar</button>
+                <button class="std-btn-not-absolute" type="submit" >Deletar</button>
             </form>
-
         </div>
     <% } %>
+    <h3><%= course.classes[i].name %></h3>
+    <p><%= course.classes[i].description %></p>
+    <p id="class-duration">Duração da aula: <%= course.classes[i].duration %> minutos.</p>
 </div>
 <% } %>
 <% if(!course.classes.length){ %>

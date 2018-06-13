@@ -197,6 +197,15 @@ body {
     bottom: 50px;
 }
 
+.std-btn-not-absolute {
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 5px 10px 0px 10px;
+    padding: 8px 20px 8px 20px;
+    background-color: #F8F8FF;
+    float: right;
+}
+
 #add-btn {
     right: 540px;
 }
@@ -207,4 +216,9 @@ body {
 
 #delete-btn {
     right: 150px;
+}
+
+.row {
+    padding: 10px;
+    font-size: 20px;
 }
