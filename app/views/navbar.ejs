@@ -50,7 +50,7 @@
         <div class="search-box">
             <input id="toSearch" name="toSearch" type="text" placeholder="Buscar">
             <input id="search-button" class="top-bar-btn" type="button" value="Buscar"
-                   onclick="sendToResearch()">
+                   onclick="Search()">
             <% if(user.autorizado){ %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
                    onclick="window.location='/my_couses_manage';">
@@ -67,14 +67,10 @@
 </div>
 
 <script type="text/javascript">
-    function sendToResearch(text=null) {
-        if (text === null) {
-            var data = document.getElementById("toSearch").value;
-            if (data == '')
-                return;
-        }
-        else {
-            var data = text;
+    function Search() {
+        var data = document.getElementById("toSearch").value;
+        if (data == '')
+            return;
         }
         let url = "http://localhost:8080/courses/" + data;
         window.location.href = url;

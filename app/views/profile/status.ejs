@@ -35,16 +35,5 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    function sendToResearch() {
-        console.log("yo")
-        let data = document.getElementById("toSearch").value;
-        if (data == '')
-            return;
-        let url = "http://localhost:8080/courses/" + data;
-        window.location.href = url;
-    }
-</script>
-
 </body>
 </html>
