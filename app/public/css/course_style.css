@@ -134,6 +134,7 @@ body {
     width: 100%;
     overflow: auto;
     padding: 50px 150px;
+    position: relative;
 }
 
 .course-img {
@@ -179,7 +180,30 @@ body {
     color: #C33C54;
 }
 #course-action-button {
+    font-size: 18px;
     position: absolute;
     right: 180px;
     top: 300px;
+}
+
+.std-btn {
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 5px 10px 0px 10px;
+    padding: 8px 20px 8px 20px;
+    background-color: #F8F8FF;
+    position: absolute;
+    bottom: 50px;
+}
+
+#add-btn {
+    right: 540px;
+}
+
+#edit-btn {
+    right: 350px;
+}
+
+#delete-btn {
+    right: 150px;
 }
