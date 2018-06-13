@@ -2,11 +2,13 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import unittest
 
+url = "http://localhost:8080/"
+
 class BRO_tests(unittest.TestCase):
     def test_wrong_login(self):
         # open page
         browser = webdriver.Chrome()
-        browser.get("http://localhost:8080/")
+        browser.get(url)
         # get sign-in button
         account_btn = browser.find_element_by_name("account-btn")
         account_btn_value = account_btn.get_attribute("value")
@@ -29,7 +31,7 @@ class BRO_tests(unittest.TestCase):
     def test_right_login(self):
         # open page
         browser = webdriver.Chrome()
-        browser.get("http://localhost:8080/")
+        browser.get(url)
         # get sign-in button
         account_btn = browser.find_element_by_name("account-btn")
         account_btn_value = account_btn.get_attribute("value")
