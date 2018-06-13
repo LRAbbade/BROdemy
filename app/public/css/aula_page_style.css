@@ -34,7 +34,7 @@ body {
 .main-menu ul li:hover {
 	background-color:#F8F1FF;
 }
-  
+
 .main-menu ul {
 	list-style-type:none;
 }
@@ -135,4 +135,8 @@ body {
 
 .info-box p {
 	padding: 15px;
+}
+
+.row {
+    padding: 25px;
 }
