@@ -3,9 +3,9 @@ module.exports.renderForm = function (application, req, res) {
 };
 module.exports.conclude = function (application, req, res) {
     let toDelete = req.params;
-    let data = req.body;
     const connection = application.config.dbConnection;
     const courseDAO = new application.app.models.CourseDAO(connection);
-    courseDAO.deleteClass(toDelete, data);
-    res.redirect('/');
+    console.log(toDelete);
+    courseDAO.deleteClass(toDelete);
+    res.redirect('/course/'+toDelete._id);
 };

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BRODemy</title>
+    <link rel="stylesheet" type="text/css" href="./css/main_style.css">
+    <link rel="icon" href="./images/bro_icon.png">
+</head>
+<body>
+<%- include ../navbar.ejs %>
+
+<% if(manage){ %>
+<div class="info-box">
+    <div class="row">
+        <input type="button" class="std-btn" id="add-btn" value="Criar Curso"
+               onclick="window.location='/register_course';">
+    </div>
+</div>
+<% } %>
+<div class="info-box">
+    <p id='no-courses-error'><strong>Nenhum curso encontrado</strong></p>
+</div>
+
+</body>
+</html>

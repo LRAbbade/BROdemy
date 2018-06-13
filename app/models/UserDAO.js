@@ -65,7 +65,6 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.aggregate(pipeline, function (err, result) {
-                console.log(result);
                 callback(result);
             });
             mongocliente.close();
@@ -103,7 +102,6 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
             if (err) throw err;
 
             collection.aggregate(pipeline, function (err, result) {
-                console.log(result);
                 callback(result);
             });
             mongocliente.close();
