@@ -3,12 +3,12 @@
 <head>
     <title>BRODemy</title>
     <link rel="stylesheet" type="text/css" href="./css/main_style.css">
+    <link rel="icon" href="./images/bro_icon.png">
 </head>
 <body>
 <%- include navbar.ejs %>
 <% if(courses.length > 0){ %>
 <% for(var i = 0; i < courses.length; i++) { %>
-
 <div class="course-display" onclick="window.location='/course/<%= courses[i]._id; %>'">
     <div class="course-img">
         <img src="<%= courses[i].image_src %>" height="135" width="240">
