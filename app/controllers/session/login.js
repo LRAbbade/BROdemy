@@ -2,10 +2,16 @@ module.exports.form = function (application, req, res) {
     res.render("login", {validacao: {}, login: {}, user: {}});
 };
 module.exports.check = function (application, req, res) {
+    const sha256 = require('sha256');
     let data = req.body;
     let connection = application.config.dbConnection;
     let userDAO = new application.app.models.UserDAO(connection);
-    userDAO.check(data, function (result) {
+    const aux = {
+        email: data.email,
+        password: sha256(data.password)
+    };
+
+    userDAO.check(aux, function (result) {
         if (result.length === 0) {
             res.render("login", {
                 validacao: [{

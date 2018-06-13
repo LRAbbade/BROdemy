@@ -11,7 +11,7 @@ CourseDAO.prototype.checkAlreadyHaveThisCourse = function (course, callback) {
                 if (err) throw err;
                 callback(count);
             });
-            mongoclient.close()
+            mongoclient.close();
         });
     });
 };
@@ -30,7 +30,7 @@ CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
-            if (err) throw err;                 
+            if (err) throw err;
             collection.find({_id: objectId(data._id)}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
                 mongoclient.close();
@@ -39,17 +39,17 @@ CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
         });
     });
 };
-CourseDAO.prototype.getClass = function (classes,callback) {
+CourseDAO.prototype.getClass = function (classes, callback) {
     this._connection.open(function (err, mongoclient) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
             if (err) throw err;
-            collection.find({classes:{$elemMatch:{name:classes.name}}}).toArray(function (mongoError, result) {
+            collection.find({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
                 mongoclient.close();
                 var result_classes = result[0].classes;
                 var right_class;
-                for (let i =0 ;i<result_classes.length;i++){
+                for (let i = 0; i < result_classes.length; i++) {
                     if (result_classes[i].name == classes.name) {
                         right_class = result_classes[i];
                         break;
@@ -70,28 +70,34 @@ CourseDAO.prototype.addNewClass = function (course, classe) {
     });
 };
 CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function (data) {
+    console.log(objectId(data._id));
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.remove({instrutor_id: objectId(data._id)});
+            collection.find({instructor_id: objectId.data_id}, function (result) {
+                console.log("resultado do find do instructor id");
+                console.log(result);
+            });
+            collection.deleteMany({instrutor_id: objectId(data._id)}, function (result) {
+                console.log("resultado do delete");
+                console.log(result);
+            });
             mongoclient.close();
         });
     });
 };
-CourseDAO.prototype.deleteClass = function (toDelete,callback) {
+CourseDAO.prototype.deleteClass = function (toDelete, callback) {
     let toDel = objectId(toDelete._id);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: toDel}).toArray(function (mongoError, result) {
-                console.log("AQUI PORRA FILHO DAP PUTA");
-                console.log(toDelete);
                 let number = "";
                 for (let i = 0; i < toDelete.number.length - 1; i++) number += toDelete.number[i];
-                collection.findOne({classes:{$elemMatch:{name:classes.name}}}).toArray(function (mongoError, result) {
+                collection.findOne({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
                     if (mongoError) throw  mongoError;
                     mongoclient.close();
                     var result_classes = result[0].classes;
                     var right_class;
-                    for (let i =0 ;i<result_classes.length;i++){
+                    for (let i = 0; i < result_classes.length; i++) {
                         if (result_classes[i].name == classes.name) {
                             right_class = result_classes[i];
                             break;

@@ -16,8 +16,6 @@
         <h1><%= course.name %></h1>
         <p><%= course.description %></p>
     </div>
-    <%= console.log(user._id) %>
-    <%= console.log(course.instructor_id) %>
     <% if(user._id == course.instructor_id){ %>
     <button id="add-btn" class="std-btn" onclick="window.location='/register_class/<%= course._id %>'">Adicionar Aula
     </button>
