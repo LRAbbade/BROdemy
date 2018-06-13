@@ -193,6 +193,10 @@ footer {
     padding: 15px;
 }
 
+.info-box h2 {
+    padding: 10px;
+}
+
 #no-courses-error {
     text-align: center;
     padding: 20px 0px;

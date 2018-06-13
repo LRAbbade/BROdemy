@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Python 3 Megacourse</title>
+    <title><%= course.name %></title>
     <link rel="stylesheet" type="text/css" href="../../css/course_style.css">
-    <link rel="icon" href="./images/bro_icon.png">
+    <link rel="icon" href="../images/bro_icon.png">
 </head>
 <body>
 <%- include ../navbar2.ejs %>
-
 
 <div class="course-header">
     <div class="course-img">
@@ -33,6 +32,7 @@
 <div class="class-display" onclick="window.location='/course/<%= course._id %>/<%= course.classes[i].name %>'">
     <h3><%= course.classes[i].name %></h3>
     <p><%= course.classes[i].description %></p>
+    <p id="class-duration">Duração da aula: <%= course.classes[i].duration %> minutos.</p>
 </div>
 <% } %>
 <% if(!course.classes.length){ %>
