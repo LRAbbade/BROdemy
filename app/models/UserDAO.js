@@ -4,8 +4,35 @@ function UserDAO(connection) {
     this._connection = connection();
 }
 
+UserDAO.prototype.checkIfUserHaveCourse = function (user, course, callback) {
+    const aux = ObjectId(user._id);
 
-//
+    const match = {
+        "$match": {
+            "_id": aux
+        }
+    };
+    const project = {
+        "$project": {
+            "has_course": {
+                "$in": [
+                    objectId(course._id),
+                    "$courses"
+                ]
+            }
+        }
+    };
+    const pipeline = [match, project];
+    this._connection.open(function (err, mongocliente) {
+        mongocliente.collection("user", function (err, collection) {
+            if (err) throw err;
+            collection.aggregate(pipeline, function (err, result) {
+                callback(result);
+            });
+            mongocliente.close();
+        });
+    });
+};
 UserDAO.prototype.manageMyCourse = function (user, callback) {
     let aux = objectId(user._id);
     const lookup = {
@@ -30,7 +57,7 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
 
     const match = {
         "$match": {
-            "_id": objectId(user._id)
+            "_id": aux
         }
     };
     const pipeline = [match, lookup, project];
