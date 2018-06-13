@@ -7,6 +7,7 @@ function UserDAO(connection) {
 
 //
 UserDAO.prototype.manageMyCourse = function (user, callback) {
+    let aux = objectId(user._id);
     const lookup = {
         "$lookup": {
             "from": "course",
@@ -33,38 +34,47 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
         }
     };
     const pipeline = [match, lookup, project];
-    let cursos_do_instrutor = users.aggregate(pipeline);
+
+    this._connection.open(function (err, mongocliente) {
+        mongocliente.collection("user", function (err, collection) {
+            if (err) throw err;
+            collection.aggregate(pipeline, function (err, result) {
+                callback(result);
+            });
+            mongocliente.close();
+        })
+    })
 };
 UserDAO.prototype.showMyCourses = function (user, callback) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         let aux = objectId(user._id);
+        const unwind = {
+            "$unwind": "$courses"
+        };
 
+        const lookup = {
+            "$lookup": {
+                "from": "course",
+                "localField": "courses",
+                "foreignField": "_id",
+                "as": "course"
+            }
+        };
+        const project = {
+            "$project": {
+                "course": 1
+            }
+        };
+        const match = {
+            "$match": {
+                "_id": aux
+            }
+        };
+        const pipeline = [match, unwind, lookup, project];
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
-            const unwind = {
-                "$unwind": "$courses"
-            };
 
-            const lookup = {
-                "$lookup": {
-                    "from": "course",
-                    "localField": "courses",
-                    "foreignField": "_id",
-                    "as": "course"
-                }
-            };
-            const project = {
-                "$project": {
-                    "course": 1
-                }
-            };
-            const match = {
-                "$match": {
-                    "_id": aux
-                }
-            };
-            const pipeline = [match, unwind, lookup, project];
             collection.aggregate(pipeline, function (err, result) {
                 callback(result);
             });
@@ -72,7 +82,6 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
         });
     });
 };
-
 UserDAO.prototype.check = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
