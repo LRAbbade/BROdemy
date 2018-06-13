@@ -2,7 +2,7 @@ module.exports.renderForm = function (application, req, res) {
     const connection = application.config.dbConnection;
     const courseDAO = new application.app.models.CourseDAO(connection);
 
-    courseDAO.checkOwnerOfCourse(data, function (result) {
+    courseDAO.checkOwnerOfCourse(req.params, function (result) {
         if (result.instrutor_id == req.session.data._id) {
             res.render("register/class", {user: req.session.data, class: {}, courses: result});
         } else{
@@ -13,8 +13,7 @@ module.exports.renderForm = function (application, req, res) {
 module.exports.conclude = function (application, req, res) {
     const connection = application.config.dbConnection;
     const courseDAO = new application.app.models.CourseDAO(connection);
-
-    let data = req.params;
+    
     let info = {
         number: req.body.number,
         name: req.body.name,
@@ -23,7 +22,7 @@ module.exports.conclude = function (application, req, res) {
         url: "https://www.youtube.com/embed/" + req.body.url
     };
 
-    courseDAO.checkOwnerOfCourse(data, function (result) {
+    courseDAO.checkOwnerOfCourse(req.params, function (result) {
         if (result.instrutor_id == req.session.data._id) {
             courseDAO.addNewClass(result, info);
         }

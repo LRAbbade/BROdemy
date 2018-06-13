@@ -5,7 +5,6 @@ function UserDAO(connection) {
 }
 
 UserDAO.prototype.checkIfUserHaveCourse = function (user, course, callback) {
-    console.log(user);
     const aux = objectId(user._id);
 
     const match = {

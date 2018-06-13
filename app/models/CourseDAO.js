@@ -25,15 +25,13 @@ CourseDAO.prototype.register = function (course, callback) {
             mongoclient.close();
         });
     });
-
-
 };
 CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: objectId(data._id)}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
-                console.log(result);
+                mongoclient.close();
                 callback(result[0]);
             });
         });
@@ -79,12 +77,10 @@ CourseDAO.prototype.editClass = function (toDelete, info) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: toDel}).toArray(function (mongoError, result) {
                 let data = result[0];
-                console.log(data.classes);
                 var removed = data.classes.filter(function (el) {
                     return el.number !== info.number;
                 });
                 data.classes = JSON.stringify(removed, null, ' ');
-                console.log(data);
                 collection.update({_id: objectId(result[0]._id)}, data, {upsert: true});
                 mongoclient.close();
             })
@@ -102,44 +98,6 @@ CourseDAO.prototype.findCourses = function (data, callback) {
         });
     });
 };
-CourseDAO.prototype.showTheCourse = function (req, res, data) {
-    this._connection.open(function (err, mongoclient) {
-        mongoclient.collection("course", function (err, collection) {
-            collection.find(data).toArray(function (mongoError, result) {
-                if (typeof req.session.data === "undefined") {
-                    res.render("thecourse", {course: result, user: {}});
-                } else {
-                    res.render("thecourses", {course: result, user: req.session.data});
-                }
-            });
-            mongoclient.close();
-        });
-    });
-};
-CourseDAO.prototype.courseForm = function (req, res, data) {
-    this._connection.open(function (err, mongoclient) {
-        mongoclient.collection("course", function (err, collection) {
-            collection.find(data).toArray(function (mongoError, result) {
-                if (typeof req.session.data === "undefined") {
-                    res.render("form/course", {course: result, user: {}});
-                } else {
-                    res.render("form/course", {course: result, user: req.session.data});
-                }
-            });
-            mongoclient.close();
-        });
-    });
-};
-CourseDAO.prototype.editCourse = function (req, res, data) {
-    this._connection.open(function (err, mongoclient) {
-        mongoclient.collection("course", function (err, collection) {
-            collection.update(CourseName, Course, {upsert: true});
-            mongoclient.close();
-        });
-    });
-
-};
-
 CourseDAO.prototype.getCourses = function (callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
