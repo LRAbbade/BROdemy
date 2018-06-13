@@ -13,7 +13,7 @@ function changeUndefined(req, res, next) {
     if (typeof req.session.data === "undefined") {
         req.session.data = {
             autorizado: false,
-            _id:{}
+            _id: ""
         };
     }
     next();

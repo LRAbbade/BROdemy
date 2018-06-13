@@ -4,7 +4,6 @@ function CourseDAO(connection) {
     this._connection = connection();
 }
 
-
 CourseDAO.prototype.checkAlreadyHaveThisCourse = function (course, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
@@ -15,7 +14,6 @@ CourseDAO.prototype.checkAlreadyHaveThisCourse = function (course, callback) {
             mongoclient.close()
         });
     });
-
 };
 CourseDAO.prototype.register = function (course, callback) {
     this._connection.open(function (err, mongoclient) {
@@ -31,33 +29,33 @@ CourseDAO.prototype.register = function (course, callback) {
 
 };
 CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
-    console.log(data);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: objectId(data._id)}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
                 console.log(result);
-                callback(result);
+                callback(result[0]);
             });
         });
     });
 };
-/*CourseDAO.prototype.addNewClass = function (data, course, callback) {
+CourseDAO.prototype.addNewClass = function (course,classe) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.find({_id: objectId(course.id)}).toArray(function (mongoError, result) {
-                if (mongoError) throw  mongoError;
-            });
+            course.classes.push(classe);
+            collection.update({_id: objectId(course._id)}, course, {upsert: true});
+            mongoclient.close();
         });
     });
-
-                let data = result[0];
-                data.classes.push(classe);
-                collection.update({_id: objectId(result[0]._id)}, data, {upsert: true});
-                callback();
-                mongoclient.close();
-
-};*/
+};
+CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function(data){
+    this._connection.open(function (err, mongoclient) {
+        mongoclient.collection("course", function (err, collection) {
+            collection.remove({instrutor_id: objectId(data._id)});
+            mongoclient.close();
+        });
+    });
+};
 CourseDAO.prototype.deleteClass = function (toDelete, info) {
     let toDel = objectId(toDelete._id);
     this._connection.open(function (err, mongoclient) {

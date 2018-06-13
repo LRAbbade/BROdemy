@@ -5,7 +5,8 @@ function UserDAO(connection) {
 }
 
 UserDAO.prototype.checkIfUserHaveCourse = function (user, course, callback) {
-    const aux = ObjectId(user._id);
+    console.log(user);
+    const aux = objectId(user._id);
 
     const match = {
         "$match": {
@@ -60,6 +61,7 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
             "_id": aux
         }
     };
+
     const pipeline = [match, lookup, project];
 
     this._connection.open(function (err, mongocliente) {
@@ -69,8 +71,8 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
                 callback(result);
             });
             mongocliente.close();
-        })
-    })
+        });
+    });
 };
 UserDAO.prototype.showMyCourses = function (user, callback) {
     this._connection.open(function (err, mongocliente) {
@@ -145,17 +147,15 @@ UserDAO.prototype.editPassword = function (dataAfter, after, data) {
         });
     });
 };
-UserDAO.prototype.deleteUser = function (data) {
+UserDAO.prototype.deleteUser = function (data,callback) {
     let info = objectId(data._id);
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.remove({_id: info}, 1);
-            mongocliente.collection("course", function (err, col) {
-                col.remove({instrutor_id: data._id});
-            });
             mongocliente.close();
+            callback();
         });
     });
 };

@@ -1,6 +1,14 @@
 module.exports.renderForm = function (application, req, res) {
-    var data = req.params;
-    res.render("register/class", {user: req.session.data, class: {}, courses: data});
+    const connection = application.config.dbConnection;
+    const courseDAO = new application.app.models.CourseDAO(connection);
+
+    courseDAO.checkOwnerOfCourse(data, function (result) {
+        if (result.instrutor_id == req.session.data._id) {
+            res.render("register/class", {user: req.session.data, class: {}, courses: result});
+        } else{
+            res.redirect('/course/'+result._id);
+        }
+    });
 };
 module.exports.conclude = function (application, req, res) {
     const connection = application.config.dbConnection;
@@ -16,9 +24,10 @@ module.exports.conclude = function (application, req, res) {
     };
 
     courseDAO.checkOwnerOfCourse(data, function (result) {
+        if (result.instrutor_id == req.session.data._id) {
+            courseDAO.addNewClass(result, info);
+        }
+        res.redirect('/course/' + result._id);
 
     });
-    // courseDAO.addNewClass(data, info, function () {
-    //     res.redirect('/course/' + data.id);
-    // });
 };

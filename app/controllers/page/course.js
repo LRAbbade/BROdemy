@@ -1,9 +1,18 @@
 module.exports.show = function (application, req, res) {
-    let data = req.params;
+    let course = req.params;
     let connection = application.config.dbConnection;
     let courseDAO = new application.app.models.CourseDAO(connection);
-    
-    courseDAO.getCourse(data, function (result) {
-        res.render("page/course",{course:result[0],user:req.session.data})
-    })
+    let userDAO = new application.app.models.UserDAO(connection);
+
+    courseDAO.getCourse(course, function (result) {
+        if (req.session.data._id === "") {
+            let have = false;
+            res.render("page/course", {course: result[0], user: req.session.data, haveThisCourse: have});
+        } else {
+            userDAO.checkIfUserHaveCourse(req.session.data, course, function (have) {
+                res.render("page/course", {course: result[0], user: req.session.data, haveThisCourse: have});
+            });
+        }
+
+    });
 };
