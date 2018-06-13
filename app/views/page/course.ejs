@@ -5,6 +5,9 @@
     <title>Python 3 Megacourse</title>
     <link rel="stylesheet" type="text/css" href="../../css/course_style.css">
     <link rel="icon" href="../../images/bro_icon.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -52,10 +55,13 @@
 
         <!--search bar of website-->
         <div class="search-box">
-            <input type="text" placeholder="Buscar">
-            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
+            <input id="toSearch" name="toSearch" type="text" placeholder="Buscar">
+            <input id="search-button" class="top-bar-btn" type="button" value="Buscar"
+                   onclick="sendToResearch()">
+            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+                   onclick="window.location='/my_account';">
+            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+                   onclick="window.location='/my_courses';">
         </div>
     </div>
 </div>
@@ -90,5 +96,17 @@
     <p id='no-courses-error'><strong>Nenhuma aula encontrada</strong></p>
 </div>
 <% } %>
+
+<script type="text/javascript">
+    function sendToResearch(){
+        console.log("yo")
+        let data = document.getElementById("toSearch").value;
+        if (data == '')
+            return;
+        let url = "http://localhost:8080/courses/" + data;
+        window.location.href = url;
+    }
+</script>
+
 </body>
 </html>

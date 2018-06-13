@@ -18,6 +18,9 @@
     <!-- materialize -->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
     <link rel="icon" href="./images/bro_icon.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="top-bar">
@@ -60,14 +63,17 @@
     </div>
     <!--search bar of website-->
     <div class="search-box">
-        <input type="text" placeholder="Buscar">
-        <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-
+        <input id="toSearch" name="toSearch" type="text" placeholder="Buscar">
+        <input id="search-button" class="top-bar-btn" type="button" value="Buscar"
+               onclick="sendToResearch()">
         <% if(user.autorizado){ %>
-        <input class="top-bar-btn" type="button" name="account-btn" value="Tornece um instrutor">
-        <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-        <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
-        <% } else { %>
+        <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
+               onclick="window.location='/my_couses_manage';">
+        <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+               onclick="window.location='/my_account';">
+        <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+               onclick="window.location='/my_courses';">
+        <% }else{ %>
         <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
                onclick="window.location='/login';">
         <% } %>
@@ -98,5 +104,17 @@
 
 </div>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    function sendToResearch(){
+        console.log("yo")
+        let data = document.getElementById("toSearch").value;
+        if (data == '')
+            return;
+        let url = "http://localhost:8080/courses/" + data;
+        window.location.href = url;
+    }
+</script>
+
 </body>
 </html>

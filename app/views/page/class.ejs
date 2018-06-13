@@ -5,6 +5,9 @@
 	<title>Aula</title>
 	<link rel="stylesheet" type="text/css" href="./css/aula_page_style.css">
 	<link rel="icon" href="./images/bro_icon.png">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="header">
@@ -47,14 +50,16 @@
 	            </ul>
 	        </div>
 	        <!--search bar of website-->
-	        <div class="search-box">
-	            <input type="text" placeholder="Buscar">
-	            <input id="search-button" class="top-bar-btn" type="button" name="search-btn" value="Buscar">
-	            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor">
-	            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta">
-	            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos">
-	            <input class="top-bar-btn" type="button" name="account-btn" value="Sign in"
-	                   onclick="window.location='/login';">
+			<div class="search-box">
+	            <input id="toSearch" name="toSearch" type="text" placeholder="Buscar">
+	            <input id="search-button" class="top-bar-btn" type="button" value="Buscar"
+	                   onclick="sendToResearch()">
+	            <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
+	                   onclick="window.location='/my_couses_manage';">
+	            <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
+	                   onclick="window.location='/my_account';">
+	            <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
+	                   onclick="window.location='/my_courses';">
 	        </div>
 	    </div>
 	</div>
@@ -65,5 +70,17 @@
 	<div class='info-box'>
 		<iframe width="560" height="315" src="<%=classes.url%>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	</div>
+
+	<script type="text/javascript">
+	    function sendToResearch(){
+	        console.log("yo")
+	        let data = document.getElementById("toSearch").value;
+	        if (data == '')
+	            return;
+	        let url = "http://localhost:8080/courses/" + data;
+	        window.location.href = url;
+	    }
+	</script>
+
 </body>
 </html>
