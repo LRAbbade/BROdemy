@@ -31,7 +31,7 @@
 <div class="class-display" onclick="window.location ='/course/<%= course._id %>/<%= course.classes[i].number %>'">
     <% if(user._id == course.instructor_id){ %>
         <div class="row">
-            <form action="/delete_class/<%=course._id%>/<%=course.classes[i].name%>'" method="post">
+            <form action="/delete_class/<%=course._id%>/<%=course.classes[i].number%>" method="post">
                 <button class="std-btn-not-absolute" type="submit" >Deletar</button>
             </form>
         </div>

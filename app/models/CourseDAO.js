@@ -114,6 +114,8 @@ CourseDAO.prototype.checkIfClassNumberIsInCourse = function (courseId, classNumb
     });
 };
 CourseDAO.prototype.deleteClass = function (course, classToDelete) {
+    console.log(course);
+    console.log(classToDelete);
     this._connection.open(function (err, mongoclient) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
@@ -121,7 +123,6 @@ CourseDAO.prototype.deleteClass = function (course, classToDelete) {
         });
     });
 };
-
 /*let toDel = objectId(toDelete._id);
 this._connection.open(function (err, mongoclient) {
     mongoclient.collection("course", function (err, collection) {
@@ -163,7 +164,6 @@ CourseDAO.prototype.editClass = function (toDelete, info) {
         });
     });
 };
-
 CourseDAO.prototype.findCourses = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
@@ -191,7 +191,6 @@ CourseDAO.prototype.getCourse = function (course, callback) {
                 mongoclient.close();
                 callback(result);
             });
-
         });
     });
 };

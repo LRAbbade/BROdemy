@@ -158,7 +158,6 @@ UserDAO.prototype.deleteUser = function (data, callback) {
         });
     });
 };
-
 UserDAO.prototype.registerOnCourse = function (course, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;

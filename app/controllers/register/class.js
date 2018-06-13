@@ -25,6 +25,7 @@ module.exports.conclude = function (application, req, res) {
 
     courseDAO.checkOwnerOfCourse(req.params, function (result) {
         if (result.instructor_id == req.session.data._id) {
+            courseDAO.checkIfClassNumberIsInCourse()
             courseDAO.addNewClass(result, info);
         }
         res.redirect('/course/' + result._id);
