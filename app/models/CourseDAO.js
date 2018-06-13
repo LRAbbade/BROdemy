@@ -89,9 +89,11 @@ CourseDAO.prototype.editClass = function (toDelete, info) {
 };
 
 CourseDAO.prototype.findCourses = function (data, callback) {
+    console.log(data);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.find(data).toArray(function (mongoError, result) {
+            collection.find({name:{$regex:data.name, $options:"i"}}).toArray(function (mongoError, result) {
+                console.log(result);
                 callback(result);
             });
             mongoclient.close();

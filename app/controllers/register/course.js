@@ -2,6 +2,7 @@ module.exports.renderForm = function (application, req, res) {
     res.render("register/course", {user: req.session.data});
 };
 module.exports.conclude = function (application, req, res) {
+    var objectId = require('mongodb').ObjectId;
 
     let subCategory = req.body.sub_category;
 
@@ -19,7 +20,7 @@ module.exports.conclude = function (application, req, res) {
             sub_category: subCategory
         },
         image_src: req.body.image,
-        instrutor_id: req.session.data._id
+        instructor_id: objectId(req.session.data._id)
     };
 
     let connection = application.config.dbConnection;

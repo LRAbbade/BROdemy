@@ -40,18 +40,16 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
             "from": "course",
             "localField": "_id",
             "foreignField": "instructor_id",
-            "as": "instructor_courses"
+            "as": "course"
         }
     };
 
     const project = {
         "$project": {
             "total_courses": {
-                "$size": "$instructor_courses"
+                "$size": "$course"
             },
-            "email": 1,
-            "name": 1,
-            "instructor_courses": 1
+            "course": 1
         }
     };
 
@@ -67,6 +65,7 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.aggregate(pipeline, function (err, result) {
+                console.log(result);
                 callback(result);
             });
             mongocliente.close();
@@ -104,6 +103,7 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
             if (err) throw err;
 
             collection.aggregate(pipeline, function (err, result) {
+                console.log(result);
                 callback(result);
             });
             mongocliente.close();

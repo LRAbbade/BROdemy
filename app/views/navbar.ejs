@@ -53,7 +53,7 @@
                    onclick="Search()">
             <% if(user.autorizado){ %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
-                   onclick="window.location='/my_couses_manage';">
+                   onclick="window.location='/my_courses_manage';">
             <input class="top-bar-btn" type="button" name="account-btn" value="Minha Conta"
                    onclick="window.location='/my_account';">
             <input class="top-bar-btn" type="button" name="courses-btn" value="Meus Cursos"
@@ -71,7 +71,6 @@
         var data = document.getElementById("toSearch").value;
         if (data == '')
             return;
-        }
         let url = "http://localhost:8080/courses/" + data;
         window.location.href = url;
     }

@@ -17,8 +17,8 @@
         <p><%= course.description %></p>
     </div>
     <%= console.log(user._id) %>
-    <%= console.log(course.instrutor_id) %>
-    <% if(user._id == course.instrutor_id){ %>
+    <%= console.log(course.instructor_id) %>
+    <% if(user._id == course.instructor_id){ %>
     <button id="add-btn" class="std-btn" onclick="window.location='/register_class/<%= course._id %>'">Adicionar Aula</button>
     <button id="edit-btn" class="std-btn">Editar Curso</button>
     <button id="delete-btn" class="std-btn">Deletar Curso</button>
