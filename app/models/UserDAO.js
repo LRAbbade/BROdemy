@@ -5,29 +5,74 @@ function UserDAO(connection) {
 }
 
 
-UserDAO.prototype.changeEmail = function (req, res, data) {
-    let toEdit = req.session.data.email;
-    this._connection.open(function (err, mongoclient) {
-        mongoclient.collection("user", function (err, collection) {
-            collection.find({email: data.email}).toArray(function (mongoError, result) {
-                if (result.length > 0) {
-                    res.render("profile/status", {
-                        validacao: [{
-                            "msg": "Email ja existe"
-                        }],
-                        user: req.session.data
-                    });
-                } else {
-                    req.session.data.email = data.email;
-                    collection.update({email: toEdit}, req.session.data, {upsert: true});
+//
+UserDAO.prototype.manageMyCourse = function (user, callback) {
+    const lookup = {
+        "$lookup": {
+            "from": "course",
+            "localField": "_id",
+            "foreignField": "instructor_id",
+            "as": "instructor_courses"
+        }
+    };
 
-                    res.render("profile/status", {validacao: [{msg: "Email editado com sucesso"}]});
+    const project = {
+        "$project": {
+            "total_courses": {
+                "$size": "$instructor_courses"
+            },
+            "email": 1,
+            "name": 1,
+            "instructor_courses": 1
+        }
+    };
+
+    const match = {
+        "$match": {
+            "_id": objectId(user._id)
+        }
+    };
+    const pipeline = [match, lookup, project];
+    let cursos_do_instrutor = users.aggregate(pipeline);
+};
+UserDAO.prototype.showMyCourses = function (user, callback) {
+    this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
+        let aux = objectId(user._id);
+
+        mongocliente.collection("user", function (err, collection) {
+            if (err) throw err;
+            const unwind = {
+                "$unwind": "$courses"
+            };
+
+            const lookup = {
+                "$lookup": {
+                    "from": "course",
+                    "localField": "courses",
+                    "foreignField": "_id",
+                    "as": "course"
                 }
+            };
+            const project = {
+                "$project": {
+                    "course": 1
+                }
+            };
+            const match = {
+                "$match": {
+                    "_id": aux
+                }
+            };
+            const pipeline = [match, unwind, lookup, project];
+            collection.aggregate(pipeline, function (err, result) {
+                callback(result);
             });
-            mongoclient.close();
+            mongocliente.close();
         });
     });
 };
+
 UserDAO.prototype.check = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
@@ -79,24 +124,12 @@ UserDAO.prototype.deleteUser = function (data) {
     });
 };
 
-UserDAO.prototype.showMyCourses = function (user, callback) {
-    this._connection.open(function (err, mongocliente) {
-        if (err) throw err;
-        mongocliente.collection("user", function (err, collection) {
-            if (err) throw err;
-            collection.find({_id: objectId(user._id)}).toArray(function (err, result) {
-                callback(result[0].courses);
-            });
-            mongocliente.close();
-        });
-    });
-};
 UserDAO.prototype.registerOnCourse = function (course, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
             let aux = data;
-            aux.courses.push(course._id);
+            aux.courses.push(objectId(course._id));
             collection.update({email: data.email}, aux, {upsert: true});
             mongocliente.close();
         });

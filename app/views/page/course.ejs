@@ -68,8 +68,8 @@
         <h1><%= course.name %></h1>
         <p><%= course.description %></p>
     </div>
-    <%= console.log(user._id)%>
-    <%= console.log(course.instrutor_id)%>
+    <%= console.log(user._id) %>
+    <%= console.log(course.instrutor_id) %>
     <% if(user._id == course.instrutor_id){ %>
     <button>Editar Curso</button>
     <button>delete Curso</button>
