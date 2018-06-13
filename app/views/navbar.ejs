@@ -67,11 +67,15 @@
 </div>
 
 <script type="text/javascript">
-    function sendToResearch() {
-        console.log("yo")
-        let data = document.getElementById("toSearch").value;
-        if (data == '')
-            return;
+    function sendToResearch(text=null) {
+        if (text === null) {
+            var data = document.getElementById("toSearch").value;
+            if (data == '')
+                return;
+        }
+        else {
+            var data = text;
+        }
         let url = "http://localhost:8080/courses/" + data;
         window.location.href = url;
     }
