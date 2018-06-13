@@ -10,6 +10,9 @@
     <!-- carregando icones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="./images/bro_icon.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
@@ -54,10 +57,9 @@
         </div>
         <!--search bar of website-->
         <div class="search-box">
-            <form action="/course_search" method="post">
-                <input name="toSearch" type="text" placeholder="Buscar">
-                <input id="search-button" class="top-bar-btn" type="submit">
-            </form>
+            <input id="toSearch" name="toSearch" type="text" placeholder="Buscar">
+            <input id="search-button" class="top-bar-btn" type="button" value="Buscar"
+                   onclick="sendToResearch()">
             <% if(user.autorizado){ %>
             <input class="top-bar-btn" type="button" name="account-btn" value="Torne-se um instrutor"
                    onclick="window.location='/my_couses_manage';">
@@ -110,6 +112,17 @@
     <p id="no-courses-error"><strong><%= validacao[0].msg %></strong></p>
 </div>
 <% } %>
+
+<script type="text/javascript">
+    function sendToResearch(){
+        console.log("yo")
+        let data = document.getElementById("toSearch").value;
+        if (data == '')
+            return;
+        let url = "http://localhost:8080/courses/" + data;
+        window.location.href = url;
+    }
+</script>
 
 </body>
 </html>
