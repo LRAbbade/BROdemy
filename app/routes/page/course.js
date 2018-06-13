@@ -5,5 +5,4 @@ module.exports = function (application) {
     application.post('/course/:_id', function (req, res) {
         application.app.controllers.page.course.conclude(application, req, res);
     });
-
 };

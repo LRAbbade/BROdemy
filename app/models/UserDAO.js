@@ -27,9 +27,10 @@ UserDAO.prototype.checkIfUserHasCourse = function (user, course, callback) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.aggregate(pipeline, function (err, result) {
+                mongocliente.close();
                 callback(result);
             });
-            mongocliente.close();
+
         });
     });
 };
@@ -162,9 +163,7 @@ UserDAO.prototype.registerOnCourse = function (course, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
-            let aux = data;
-            aux.courses.push(objectId(course._id));
-            collection.update({email: data.email}, aux, {upsert: true});
+            collection.updateOne({email: data.email}, {$push:{courses:objectId(course._id)}});
             mongocliente.close();
         });
     });

@@ -44,17 +44,17 @@ CourseDAO.prototype.getClass = function (classes, callback) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
             if (err) throw err;
-            collection.find({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
+            collection.find({classes: {$elemMatch: {number: classes.number}}}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
-                mongoclient.close();
                 var result_classes = result[0].classes;
                 var right_class;
                 for (let i = 0; i < result_classes.length; i++) {
-                    if (result_classes[i].name == classes.name) {
+                    if (result_classes[i].number == classes.number) {
                         right_class = result_classes[i];
                         break;
                     }
                 }
+                mongoclient.close();
                 callback(right_class);
             });
         });
@@ -73,50 +73,79 @@ CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function (d
     console.log(objectId(data._id));
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.find({instructor_id: objectId.data_id}, function (result) {
-                console.log("resultado do find do instructor id");
-                console.log(result);
+            collection.deleteMany({"instructor_id": objectId(data._id)});
+        });
+    });
+};
+
+CourseDAO.prototype.checkIfClassNumberIsInCourse = function (courseId, classNumber, callback) {
+    const match1 = {
+        "$match": {
+            "_id": courseId
+        }
+    };
+
+    const unwind = {
+        "$unwind": "$classes"
+    };
+
+    const project = {
+        "$project": {
+            "class_number": "$classes.number"
+        }
+    };
+
+    const match2 = {
+        "$match": {
+            "class_number": classNumber
+        }
+    };
+
+    pipeline = [match1, unwind, project, match2];
+    this._connection.open(function (err, mongoclient) {
+        if (err) throw err;
+        mongoclient.collection("course", function (err, collection) {
+            if (err) throw err;
+            collection.aggregate(pipeline, function (err, result) {
+                mongoclient.close();
+                callback(result);
             });
-            collection.deleteMany({instrutor_id: objectId(data._id)}, function (result) {
-                console.log("resultado do delete");
-                console.log(result);
+        });
+    });
+};
+CourseDAO.prototype.deleteClass = function (course, classToDelete) {
+    this._connection.open(function (err, mongoclient) {
+        if (err) throw err;
+        mongoclient.collection("course", function (err, collection) {
+            collection.updateOne({"_id":objectId(course)}, {$pull: {classes: {number:classToDelete}}})
+        });
+    });
+};
+
+/*let toDel = objectId(toDelete._id);
+this._connection.open(function (err, mongoclient) {
+    mongoclient.collection("course", function (err, collection) {
+        collection.find({_id: toDel}).toArray(function (mongoError, result) {
+            let number = "";
+            for (let i = 0; i < toDelete.number.length - 1; i++) number += toDelete.number[i];
+            collection.findOne({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
+                if (mongoError) throw  mongoError;
+                mongoclient.close();
+                var result_classes = result[0].classes;
+                var right_class;
+                for (let i = 0; i < result_classes.length; i++) {
+                    if (result_classes[i].name == classes.name) {
+                        right_class = result_classes[i];
+                        break;
+                    }
+                }
+                callback(right_class);
             });
             mongoclient.close();
-        });
+        })
     });
-};
-CourseDAO.prototype.deleteClass = function (toDelete, callback) {
-    let toDel = objectId(toDelete._id);
-    this._connection.open(function (err, mongoclient) {
-        mongoclient.collection("course", function (err, collection) {
-            collection.find({_id: toDel}).toArray(function (mongoError, result) {
-                let number = "";
-                for (let i = 0; i < toDelete.number.length - 1; i++) number += toDelete.number[i];
-                collection.findOne({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
-                    if (mongoError) throw  mongoError;
-                    mongoclient.close();
-                    var result_classes = result[0].classes;
-                    var right_class;
-                    for (let i = 0; i < result_classes.length; i++) {
-                        if (result_classes[i].name == classes.name) {
-                            right_class = result_classes[i];
-                            break;
-                        }
-                    }
-                    callback(right_class);
-                })
-                mongoclient.close();
-                // let data = result[0];
-                // var removed = data.classes.filter(function (el) {
-                //     return el.number !== toDelete.number;
-                // });
-                // data.classes = JSON.stringify(removed, null, ' ');
-                // collection.updateOne({_id: objectId(result[0]._id)}, data, {upsert: true});
-                // mongoclient.close();
-            })
-        });
-    });
-};
+});*/
+
 //don't work yet
 CourseDAO.prototype.editClass = function (toDelete, info) {
     let toDel = objectId(toDelete._id);
@@ -159,9 +188,10 @@ CourseDAO.prototype.getCourse = function (course, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: objectId(course._id)}).toArray(function (mongoError, result) {
+                mongoclient.close();
                 callback(result);
             });
-            mongoclient.close();
+
         });
     });
 };
