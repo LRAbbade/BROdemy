@@ -109,9 +109,14 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
     });
 };
 UserDAO.prototype.check = function (data, callback) {
+    const sha256 = require('sha256');
+    const aux = {
+        email: data.email,
+        password: sha256(data.password)
+    };
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
-            collection.find(data).toArray(function (mongoError, result) {
+            collection.find(aux).toArray(function (mongoError, result) {
                 callback(result)
             });
             mongoclient.close();
@@ -135,16 +140,18 @@ UserDAO.prototype.createUser = function (data, callback) {
 UserDAO.prototype.editPassword = function (dataAfter, after, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
+        const aux = objectId(data);
+
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
-            req.session.data.password = dataAfter;
-            collection.update({_id: data}, after, {upsert: true});
+
+            collection.update({_id: aux}, after, {upsert: true});
             console.log("senha alterada com sucesso");
             mongocliente.close();
         });
     });
 };
-UserDAO.prototype.deleteUser = function (data,callback) {
+UserDAO.prototype.deleteUser = function (data, callback) {
     let info = objectId(data._id);
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;

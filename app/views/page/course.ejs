@@ -19,9 +19,10 @@
     <%= console.log(user._id) %>
     <%= console.log(course.instructor_id) %>
     <% if(user._id == course.instructor_id){ %>
-    <button id="add-btn" class="std-btn" onclick="window.location='/register_class/<%= course._id %>'">Adicionar Aula</button>
+    <button id="add-btn" class="std-btn" onclick="window.location='/register_class/<%= course._id %>'">Adicionar Aula
+    </button>
     <button id="edit-btn" class="std-btn">Editar Curso</button>
-    <button id="delete-btn" class="std-btn">Deletar Curso</button>
+    <button id="delete-btn" class="std-btn" onclick="window.location='/delete_course/<%= course._id %>'">Deletar Curso</button>
     <% }else{ %>
     <form action="/register_on_course/<%= course._id %> %>" method="post">
         <button class="top-bar-btn" id="course-action-button" type="submit">Inscreva-se neste curso</button>
@@ -33,6 +34,14 @@
     <h3><%= course.classes[i].name %></h3>
     <p><%= course.classes[i].description %></p>
     <p id="class-duration">Duração da aula: <%= course.classes[i].duration %> minutos.</p>
+    <% if(user._id == course.instructor_id){ %>
+        <div class="row">
+            <form action="/delete_class/<%=course._id%>/<%=course.classes[i].name%>'" method="post">
+                <button class="std-btn" type="submit" >Deletar</button>
+            </form>
+
+        </div>
+    <% } %>
 </div>
 <% } %>
 <% if(!course.classes.length){ %>
@@ -40,5 +49,16 @@
     <p id='no-courses-error'><strong>Nenhuma aula encontrada</strong></p>
 </div>
 <% } %>
+
+
+<script type="text/javascript">
+    function whoIDelete() {
+        var data = document.getElementById("toSearch").value;
+        if (data == '')
+            return;
+        let url = "http://localhost:8080/courses/" + data;
+        window.location.href = url;
+    }
+</script>
 </body>
 </html>

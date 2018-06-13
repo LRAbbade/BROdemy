@@ -77,18 +77,36 @@ CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function (d
         });
     });
 };
-CourseDAO.prototype.deleteClass = function (toDelete) {
+CourseDAO.prototype.deleteClass = function (toDelete,callback) {
     let toDel = objectId(toDelete._id);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.find({_id: toDel}).toArray(function (mongoError, result) {
-                let data = result[0];
-                var removed = data.classes.filter(function (el) {
-                    return el.number !== toDelete.number;
-                });
-                data.classes = JSON.stringify(removed, null, ' ');
-                collection.updateOne({_id: objectId(result[0]._id)}, data, {upsert: true});
+                console.log("AQUI PORRA FILHO DAP PUTA");
+                console.log(toDelete);
+                let number = "";
+                for (let i = 0; i < toDelete.number.length - 1; i++) number += toDelete.number[i];
+                collection.findOne({classes:{$elemMatch:{name:classes.name}}}).toArray(function (mongoError, result) {
+                    if (mongoError) throw  mongoError;
+                    mongoclient.close();
+                    var result_classes = result[0].classes;
+                    var right_class;
+                    for (let i =0 ;i<result_classes.length;i++){
+                        if (result_classes[i].name == classes.name) {
+                            right_class = result_classes[i];
+                            break;
+                        }
+                    }
+                    callback(right_class);
+                })
                 mongoclient.close();
+                // let data = result[0];
+                // var removed = data.classes.filter(function (el) {
+                //     return el.number !== toDelete.number;
+                // });
+                // data.classes = JSON.stringify(removed, null, ' ');
+                // collection.updateOne({_id: objectId(result[0]._id)}, data, {upsert: true});
+                // mongoclient.close();
             })
         });
     });

@@ -2,10 +2,11 @@ module.exports.renderForm = function (application, req, res) {
     res.render("register/user", {validacao: {}, student: {},user:{}});
 };
 module.exports.conclude = function (application, req, res) {
+    const sha256 = require('sha256');
     let data = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: sha256(req.body.password),
         courses: []
     };
     const connection = application.config.dbConnection;

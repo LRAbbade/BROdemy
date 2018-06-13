@@ -5,7 +5,10 @@ module.exports.conclude = function (application, req, res) {
     let toDelete = req.params;
     const connection = application.config.dbConnection;
     const courseDAO = new application.app.models.CourseDAO(connection);
+    console.log("aqui é no controler");
     console.log(toDelete);
-    courseDAO.deleteClass(toDelete);
-    res.redirect('/course/'+toDelete._id);
+    courseDAO.deleteClass(toDelete, function (result) {
+
+    });
+    res.redirect('/course/' + toDelete._id);
 };
