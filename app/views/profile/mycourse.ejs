@@ -8,6 +8,15 @@
 <body>
 <%- include ../navbar.ejs %>
 
+<% if(manage){ %>
+<div class="info-box">
+    <div class="row">
+        <input type="button" class="std-btn" id="add-btn" value="Criar Curso"
+               onclick="window.location='/register_course';">
+    </div>
+</div>
+<% } %>
+
 <% if(inform.length > 0){ %>
 <% for(var i = 0; i < inform.length; i++) { %>
 
@@ -16,7 +25,7 @@
         <img src="<%= inform[i].course[0].image_src %>" height="135" width="240">
     </div>
     <div class="course-content">
-        <h3 id="course-title"><%= inform[i].course[0].name%></h3>
+        <h3 id="course-title"><%= inform[i].course[0].name %></h3>
         <p><%= inform[i].course[0].description %></p>
     </div>
 </div>

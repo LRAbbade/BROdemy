@@ -3,7 +3,7 @@ module.exports.show = function (application, req, res) {
     const userDAO = new application.app.models.UserDAO(connection);
 
     userDAO.manageMyCourse(req.session.data, function (result) {
-        res.render('profile/mycourse', {inform: result, user: req.session.data});
+        res.render('profile/mycourse', {inform: result, user: req.session.data,manage:true});
     });
 };
 
