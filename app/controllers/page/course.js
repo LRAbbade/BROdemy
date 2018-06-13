@@ -9,7 +9,7 @@ module.exports.show = function (application, req, res) {
             let have = false;
             res.render("page/course", {course: result[0], user: req.session.data, haveThisCourse: have});
         } else {
-            userDAO.checkIfUserHaveCourse(req.session.data, course, function (have) {
+            userDAO.checkIfUserHasCourse(req.session.data, course, function (have) {
                 res.render("page/course", {course: result[0], user: req.session.data, haveThisCourse: have});
             });
         }

@@ -29,7 +29,7 @@
     <% } %>
 </div>
 <% for(let i = 0;i < course.classes.length; i++){ %>
-<div class="class-display" onclick="window.location='/course/<%= course._id %>/<%= course.classes[i].name %>'">
+<div class="class-display" onclick="window.location.href='http://localhost:8080/course/<%= course._id %>/<%= course.classes[i].name %>'">
     <h3><%= course.classes[i].name %></h3>
     <p><%= course.classes[i].description %></p>
     <p id="class-duration">Duração da aula: <%= course.classes[i].duration %> minutos.</p>

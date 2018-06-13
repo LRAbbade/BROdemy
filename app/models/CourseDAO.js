@@ -28,7 +28,9 @@ CourseDAO.prototype.register = function (course, callback) {
 };
 CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
+        if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
+            if (err) throw err;                 
             collection.find({_id: objectId(data._id)}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
                 mongoclient.close();
@@ -37,7 +39,28 @@ CourseDAO.prototype.checkOwnerOfCourse = function (data, callback) {
         });
     });
 };
-CourseDAO.prototype.addNewClass = function (course,classe) {
+CourseDAO.prototype.getClass = function (classes,callback) {
+    this._connection.open(function (err, mongoclient) {
+        if (err) throw err;
+        mongoclient.collection("course", function (err, collection) {
+            if (err) throw err;
+            collection.find({classes:{$elemMatch:{name:classes.name}}}).toArray(function (mongoError, result) {
+                if (mongoError) throw  mongoError;
+                mongoclient.close();
+                var result_classes = result[0].classes;
+                var right_class;
+                for (let i =0 ;i<result_classes.length;i++){
+                    if (result_classes[i].name == classes.name) {
+                        right_class = result_classes[i];
+                        break;
+                    }
+                }
+                callback(right_class);
+            });
+        });
+    });
+};
+CourseDAO.prototype.addNewClass = function (course, classe) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             course.classes.push(classe);
@@ -46,7 +69,7 @@ CourseDAO.prototype.addNewClass = function (course,classe) {
         });
     });
 };
-CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function(data){
+CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function (data) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.remove({instrutor_id: objectId(data._id)});
@@ -92,7 +115,7 @@ CourseDAO.prototype.findCourses = function (data, callback) {
     console.log(data);
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            collection.find({name:{$regex:data.name, $options:"i"}}).toArray(function (mongoError, result) {
+            collection.find({name: {$regex: data.name, $options: "i"}}).toArray(function (mongoError, result) {
                 console.log(result);
                 callback(result);
             });
