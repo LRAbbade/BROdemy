@@ -40,5 +40,4 @@ module.exports.conclude = function (application, req, res) {
             });
         }
     });
-    res.redirect('/course/' + course.name)
 };

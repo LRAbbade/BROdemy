@@ -156,10 +156,22 @@ body {
     width: 50%;
     margin: 35px auto;
     padding: 20px 20px 20px 20px;
+    box-shadow: 3px 3px 10px 0px #888888;
+    overflow: auto;
 }
+
 .class-display h3 {
     margin-bottom: 10px;
 }
+
+.class-display p {
+    padding-top: 10px;
+}
+
+#class-duration {
+    float: right;
+}
+
 #no-courses-error {
     text-align: center;
     padding: 20px 0px;
