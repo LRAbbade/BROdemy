@@ -34,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CourseDAO.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CourseDAO.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/CourseDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+            <state relative-caret-position="324">
+              <caret line="185" column="23" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
               <folding>
                 <element signature="e#76#77#0" expanded="true" />
                 <element signature="e#115#116#0" expanded="true" />
@@ -55,9 +55,8 @@
                 <element signature="e#1310#1450#0" expanded="true" />
                 <element signature="e#1689#2331#0" expanded="true" />
                 <element signature="e#1833#2319#0" expanded="true" />
-                <element signature="e#2405#2712#0" expanded="true" />
-                <element signature="e#2461#2708#0" expanded="true" />
-                <element signature="e#2531#2700#0" expanded="true" />
+                <element signature="e#2406#2808#0" expanded="true" />
+                <element signature="e#2792#3176#0" expanded="true" />
                 <element signature="e#2955#2956#0" expanded="true" />
                 <element signature="e#3039#3040#0" expanded="true" />
                 <element signature="e#3154#3222#0" />
@@ -70,36 +69,26 @@
                 <element signature="e#3614#4370#0" expanded="true" />
                 <element signature="e#3712#4362#0" expanded="true" />
                 <element signature="e#3807#3876#0" expanded="true" />
-                <element signature="e#3978#3983#0" expanded="true" />
                 <element signature="e#4107#4863#0" expanded="true" />
                 <element signature="e#4140#4141#0" expanded="true" />
                 <element signature="e#4222#4223#0" expanded="true" />
-                <element signature="e#5180#5837#0" expanded="true" />
-                <element signature="e#5276#5833#0" expanded="true" />
-                <element signature="e#5346#5825#0" expanded="true" />
-                <element signature="e#5428#5814#0" expanded="true" />
-                <element signature="e#5532#5533#0" expanded="true" />
-                <element signature="e#5604#5605#0" expanded="true" />
-                <element signature="e#5900#6244#0" expanded="true" />
+                <element signature="e#4432#4989#0" expanded="true" />
+                <element signature="e#4584#4970#0" expanded="true" />
+                <element signature="e#4688#4689#0" expanded="true" />
+                <element signature="e#4760#4761#0" expanded="true" />
                 <element signature="e#5956#6240#0" expanded="true" />
                 <element signature="e#6026#6232#0" expanded="true" />
                 <element signature="e#6138#6139#0" expanded="true" />
                 <element signature="e#6186#6187#0" expanded="true" />
-                <element signature="e#6299#6601#0" expanded="true" />
                 <element signature="e#6355#6597#0" expanded="true" />
                 <element signature="e#6425#6589#0" expanded="true" />
                 <element signature="e#6495#6496#0" expanded="true" />
                 <element signature="e#6543#6544#0" expanded="true" />
-                <element signature="e#6663#6992#0" expanded="true" />
                 <element signature="e#6719#6988#0" expanded="true" />
                 <element signature="e#6789#6980#0" expanded="true" />
                 <element signature="e#7084#7150#0" expanded="true" />
-                <element signature="e#7076#7356#0" expanded="true" />
                 <element signature="e#7133#7352#0" expanded="true" />
                 <element signature="e#7204#7344#0" expanded="true" />
-                <element signature="e#7411#7659#0" expanded="true" />
-                <element signature="e#7468#7655#0" expanded="true" />
-                <element signature="e#7539#7647#0" expanded="true" />
                 <element signature="e#7690#7691#0" expanded="true" />
                 <element signature="e#7714#7715#0" expanded="true" />
               </folding>
@@ -107,67 +96,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="course.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
+      <file leaf-file-name="course.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/page/course.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#242#243#0" expanded="true" />
-                <element signature="e#329#330#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="254">
+              <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
+        <entry file="file://$PROJECT_DIR$/app/controllers/delete/course.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="68">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="7" />
               <folding>
-                <element signature="e#61#62#0" expanded="true" />
-                <element signature="e#124#125#0" expanded="true" />
+                <element signature="e#382#781#0" expanded="true" />
+                <element signature="e#452#773#0" expanded="true" />
+                <element signature="e#668#669#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/register/class.js">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/delete/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/delete/class.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+            <state relative-caret-position="1">
+              <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
               <folding>
                 <element signature="e#61#62#0" expanded="true" />
                 <element signature="e#120#121#0" expanded="true" />
+                <element signature="e#690#1072#0" expanded="true" />
+                <element signature="e#871#1270#0" expanded="true" />
+                <element signature="e#996#1734#0" expanded="true" />
+                <element signature="e#1523#1684#0" expanded="true" />
+                <element signature="e#1604#1605#0" expanded="true" />
+                <element signature="e#1700#1701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/page/class.js">
+      <file leaf-file-name="class.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/register/class.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-              <folding>
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#709#1048#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="237">
+              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -175,41 +151,70 @@
       <file leaf-file-name="UserDAO.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/UserDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="151" column="33" lean-forward="true" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+            <state relative-caret-position="126">
+              <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
               <folding>
                 <element signature="e#74#75#0" expanded="true" />
                 <element signature="e#113#114#0" expanded="true" />
                 <element signature="e#623#895#0" expanded="true" />
                 <element signature="e#692#887#0" expanded="true" />
                 <element signature="e#792#858#0" expanded="true" />
-                <element signature="e#1017#1190#0" />
                 <element signature="e#1544#1816#0" expanded="true" />
                 <element signature="e#1613#1808#0" expanded="true" />
                 <element signature="e#1713#1714#0" expanded="true" />
                 <element signature="e#1761#1762#0" expanded="true" />
-                <element signature="e#1882#2837#0" expanded="true" />
+                <element signature="e#1939#2833#0" expanded="true" />
                 <element signature="e#2629#2825#0" expanded="true" />
                 <element signature="e#2730#2731#0" expanded="true" />
                 <element signature="e#2778#2779#0" expanded="true" />
                 <element signature="e#2891#3194#0" expanded="true" />
                 <element signature="e#2947#3190#0" expanded="true" />
-                <element signature="e#3089#3090#0" expanded="true" />
-                <element signature="e#3136#3137#0" expanded="true" />
+                <element signature="e#3015#3182#0" expanded="true" />
+                <element signature="e#3094#3160#0" expanded="true" />
                 <element signature="e#3253#3689#0" expanded="true" />
                 <element signature="e#3309#3685#0" expanded="true" />
                 <element signature="e#3377#3677#0" expanded="true" />
                 <element signature="e#3451#3665#0" expanded="true" />
-                <element signature="e#3517#3581#0" />
                 <element signature="e#3758#4174#0" expanded="true" />
                 <element signature="e#3815#4170#0" expanded="true" />
                 <element signature="e#3912#4162#0" expanded="true" />
+                <element signature="e#4324#4577#0" expanded="true" />
                 <element signature="e#4421#4569#0" expanded="true" />
+                <element signature="e#4648#4857#0" expanded="true" />
+                <element signature="e#5053#5298#0" expanded="true" />
+                <element signature="e#5146#5250#0" expanded="true" />
+                <element signature="e#5264#5265#0" expanded="true" />
+                <element signature="e#5312#5313#0" expanded="true" />
+                <element signature="e#5468#5819#0" expanded="true" />
+                <element signature="e#5544#5816#0" expanded="true" />
+                <element signature="e#5739#5740#0" expanded="true" />
+                <element signature="e#5871#5872#0" expanded="true" />
                 <element signature="e#4645#5009#0" expanded="true" />
                 <element signature="e#4702#5005#0" expanded="true" />
                 <element signature="e#4799#4997#0" expanded="true" />
                 <element signature="e#5042#5043#0" expanded="true" />
                 <element signature="e#5064#5065#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/page/class.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/class/register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="119" lean-forward="true" selection-start-column="119" selection-end-column="119" />
+              <folding>
+                <element signature="e#106#310#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -241,15 +246,20 @@
       <find>elemMatch</find>
       <find>dele</find>
       <find>console</find>
-      <find>check</find>
       <find>delet</find>
       <find>deleteCourseBecauseTheInstructorHasBeenDeleted</find>
       <find>chec</find>
-      <find>aggre</find>
       <find>aggregat</find>
       <find>checki</find>
       <find>getClass</find>
       <find>regist</find>
+      <find>get</find>
+      <find>aggre</find>
+      <find>instructor</find>
+      <find>removecou</find>
+      <find>check</find>
+      <find>del</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,24 +301,24 @@
         <option value="$PROJECT_DIR$/app/controllers/profile/myCourseManage.js" />
         <option value="$PROJECT_DIR$/app/public/css/course_style.css" />
         <option value="$PROJECT_DIR$/app/routes/class/register.js" />
-        <option value="$PROJECT_DIR$/app/controllers/delete/course.js" />
         <option value="$PROJECT_DIR$/app/controllers/register/user.js" />
         <option value="$PROJECT_DIR$/app/views/login.ejs" />
         <option value="$PROJECT_DIR$/app/controllers/profile/password.js" />
         <option value="$PROJECT_DIR$/app/views/delete/user.ejs" />
         <option value="$PROJECT_DIR$/app/controllers/page/course.js" />
         <option value="$PROJECT_DIR$/app/controllers/session/login.js" />
-        <option value="$PROJECT_DIR$/app/controllers/delete/user.js" />
         <option value="$PROJECT_DIR$/app/controllers/delete/class.js" />
         <option value="$PROJECT_DIR$/app/routes/course/delete.js" />
         <option value="$PROJECT_DIR$/app/routes/page/class.js" />
         <option value="$PROJECT_DIR$/app/controllers/page/class.js" />
         <option value="$PROJECT_DIR$/app/routes/page/course.js" />
         <option value="$PROJECT_DIR$/app/controllers/profile/myCourse.js" />
-        <option value="$PROJECT_DIR$/app/models/UserDAO.js" />
-        <option value="$PROJECT_DIR$/app/models/CourseDAO.js" />
-        <option value="$PROJECT_DIR$/app/views/page/course.ejs" />
         <option value="$PROJECT_DIR$/app/controllers/register/class.js" />
+        <option value="$PROJECT_DIR$/app/views/page/course.ejs" />
+        <option value="$PROJECT_DIR$/app/controllers/delete/course.js" />
+        <option value="$PROJECT_DIR$/app/models/UserDAO.js" />
+        <option value="$PROJECT_DIR$/app/controllers/delete/user.js" />
+        <option value="$PROJECT_DIR$/app/models/CourseDAO.js" />
       </list>
     </option>
   </component>
@@ -338,177 +348,199 @@
   <component name="ProjectUserFactors">
     <factor id="binaryFeature:liftShorter">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="455,0" />
+        <observation name="false" value="11,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:liftShorterClasses">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:middleMatching">
       <dailyData date="13-6-2018">
-        <observation name="false" value="279,0" />
+        <observation name="false" value="466,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:nonGeneric">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_inResolveScope">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="false" value="2,0" />
+        <observation name="true" value="2,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_openedInEditor">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="false" value="4,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameDirectory">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="false" value="4,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameLogicalRoot">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="false" value="4,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sdkOrLibrary">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="false" value="4,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:templates">
       <dailyData date="13-6-2018">
-        <observation name="false" value="279,0" />
+        <observation name="false" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:accessible">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:expectedType">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:kind">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_groovyReferenceListWeigher">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_javaInheritance">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_referenceList">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:recursion">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="completionFinishedType">
       <dailyData date="13-6-2018">
-        <observation name="cancelled" value="578,0" />
-        <observation name="explicitSelect" value="68,0" />
-        <observation name="typedSelect" value="211,0" />
+        <observation name="cancelled" value="1050,0" />
+        <observation name="explicitSelect" value="136,0" />
+        <observation name="typedSelect" value="330,0" />
       </dailyData>
     </factor>
     <factor id="completionType">
       <dailyData date="13-6-2018">
-        <observation name="BASIC" value="381,0" />
+        <observation name="BASIC" value="646,0" />
       </dailyData>
     </factor>
     <factor id="completionUsage">
       <dailyData date="13-6-2018">
-        <observation name="count" value="857,0" />
+        <observation name="count" value="1516,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="455,0" />
+        <observation name="average" value="0,0" />
+        <observation name="count" value="21,0" />
+        <observation name="max" value="0,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:grouping">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="455,0" />
+        <observation name="average" value="0,0" />
+        <observation name="count" value="21,0" />
+        <observation name="max" value="0,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:mostUsed">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:nameEnd">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:position">
       <dailyData date="13-6-2018">
-        <observation name="average" value="0,071813" />
-        <observation name="count" value="557,0" />
+        <observation name="average" value="0,083781" />
+        <observation name="count" value="931,0" />
         <observation name="max" value="3,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="0,105524" />
+        <observation name="variance" value="0,112795" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prefix">
       <dailyData date="13-6-2018">
-        <observation name="average" value="-1150,116697" />
-        <observation name="count" value="557,0" />
+        <observation name="average" value="-1142,329753" />
+        <observation name="count" value="931,0" />
         <observation name="max" value="0,0" />
-        <observation name="min" value="-1204,0" />
-        <observation name="variance" value="9480,15716" />
+        <observation name="min" value="-1303,0" />
+        <observation name="variance" value="14086,762806" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:priority">
       <dailyData date="13-6-2018">
-        <observation name="average" value="-48,885099" />
-        <observation name="count" value="557,0" />
-        <observation name="max" value="-1,0" />
+        <observation name="average" value="-49,792696" />
+        <observation name="count" value="931,0" />
+        <observation name="max" value="20,0" />
         <observation name="min" value="-102,0" />
-        <observation name="variance" value="2141,975876" />
+        <observation name="variance" value="2200,89888" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_explicitlyImported">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_knownElement">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_sameModule">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="462,0" />
+        <observation name="average" value="1,142857" />
+        <observation name="count" value="7,0" />
+        <observation name="max" value="2,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,404354" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_samePsiMember">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:query_length">
       <dailyData date="13-6-2018">
         <observation name="average" value="0,0" />
-        <observation name="count" value="557,0" />
+        <observation name="count" value="931,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
@@ -516,32 +548,32 @@
     </factor>
     <factor id="doubleFeature:result_length">
       <dailyData date="13-6-2018">
-        <observation name="average" value="5,933573" />
-        <observation name="count" value="557,0" />
-        <observation name="max" value="14,0" />
+        <observation name="average" value="5,968851" />
+        <observation name="count" value="931,0" />
+        <observation name="max" value="19,0" />
         <observation name="min" value="1,0" />
-        <observation name="variance" value="7,83772" />
+        <observation name="variance" value="8,049691" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sameWords">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:shorter">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:simple">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sorter">
       <dailyData date="13-6-2018">
         <observation name="average" value="1,0" />
-        <observation name="count" value="557,0" />
+        <observation name="count" value="931,0" />
         <observation name="max" value="1,0" />
         <observation name="min" value="1,0" />
         <observation name="variance" value="0,0" />
@@ -549,51 +581,51 @@
     </factor>
     <factor id="doubleFeature:statics">
       <dailyData date="13-6-2018">
-        <observation name="UNDEFINED" value="279,0" />
+        <observation name="UNDEFINED" value="466,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:stats">
       <dailyData date="13-6-2018">
-        <observation name="average" value="6847,082585" />
-        <observation name="count" value="557,0" />
+        <observation name="average" value="7023,730397" />
+        <observation name="count" value="931,0" />
         <observation name="max" value="10000,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="18689874,871647" />
+        <observation name="variance" value="18780190,824414" />
       </dailyData>
     </factor>
     <factor id="itemPosition">
       <dailyData date="13-6-2018">
-        <observation name="0" value="52,0" />
-        <observation name="1" value="13,0" />
-        <observation name="2" value="2,0" />
-        <observation name="3" value="1,0" />
+        <observation name="0" value="105,0" />
+        <observation name="1" value="25,0" />
+        <observation name="2" value="4,0" />
+        <observation name="3" value="2,0" />
       </dailyData>
     </factor>
     <factor id="mnemonicsUsage">
       <dailyData date="13-6-2018">
-        <observation name="total" value="66,0" />
-        <observation name="withMnemonics" value="1,0" />
+        <observation name="total" value="130,0" />
+        <observation name="withMnemonics" value="4,0" />
       </dailyData>
     </factor>
     <factor id="prefixLength">
       <dailyData date="13-6-2018">
-        <observation name="0" value="1,0" />
+        <observation name="0" value="5,0" />
         <observation name="1" value="1,0" />
-        <observation name="10" value="1,0" />
-        <observation name="2" value="12,0" />
-        <observation name="3" value="19,0" />
-        <observation name="4" value="16,0" />
-        <observation name="5" value="6,0" />
-        <observation name="6" value="4,0" />
-        <observation name="7" value="2,0" />
-        <observation name="8" value="4,0" />
+        <observation name="10" value="2,0" />
+        <observation name="2" value="18,0" />
+        <observation name="3" value="37,0" />
+        <observation name="4" value="39,0" />
+        <observation name="5" value="13,0" />
+        <observation name="6" value="7,0" />
+        <observation name="7" value="6,0" />
+        <observation name="8" value="6,0" />
         <observation name="9" value="2,0" />
       </dailyData>
     </factor>
     <factor id="timeBetweenTyping">
       <dailyData date="13-6-2018">
-        <observation name="average" value="186,548578" />
-        <observation name="count" value="844,0" />
+        <observation name="average" value="196,142756" />
+        <observation name="count" value="1408,0" />
       </dailyData>
     </factor>
   </component>
@@ -846,12 +878,12 @@
       <workItem from="1528716789371" duration="1761000" />
       <workItem from="1528747204140" duration="8951000" />
       <workItem from="1528759744372" duration="7938000" />
-      <workItem from="1528895139933" duration="18416000" />
+      <workItem from="1528895139933" duration="25318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128142000" />
+    <option name="totallyTimeSpent" value="135044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -861,10 +893,10 @@
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.3298969" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.3298969" />
       <window_info id="npm" order="3" sideWeight="0.50066936" side_tool="true" weight="0.25033557" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49933067" visible="true" weight="0.25033557" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49933067" visible="true" weight="0.25033557" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" sideWeight="0.50159234" side_tool="true" weight="0.21073826" />
@@ -891,20 +923,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/routes/delete/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/profile/myCourse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/course/register.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1043,13 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/class/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/edit/course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1155,17 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/delete/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="e#61#62#0" expanded="true" />
-            <element signature="e#120#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/session/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
@@ -1186,13 +1186,6 @@
           <folding>
             <element signature="e#105#299#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/page/class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1231,47 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/UserDAO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="151" column="33" lean-forward="true" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
-          <folding>
-            <element signature="e#74#75#0" expanded="true" />
-            <element signature="e#113#114#0" expanded="true" />
-            <element signature="e#623#895#0" expanded="true" />
-            <element signature="e#692#887#0" expanded="true" />
-            <element signature="e#792#858#0" expanded="true" />
-            <element signature="e#1017#1190#0" />
-            <element signature="e#1544#1816#0" expanded="true" />
-            <element signature="e#1613#1808#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#1882#2837#0" expanded="true" />
-            <element signature="e#2629#2825#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2778#2779#0" expanded="true" />
-            <element signature="e#2891#3194#0" expanded="true" />
-            <element signature="e#2947#3190#0" expanded="true" />
-            <element signature="e#3089#3090#0" expanded="true" />
-            <element signature="e#3136#3137#0" expanded="true" />
-            <element signature="e#3253#3689#0" expanded="true" />
-            <element signature="e#3309#3685#0" expanded="true" />
-            <element signature="e#3377#3677#0" expanded="true" />
-            <element signature="e#3451#3665#0" expanded="true" />
-            <element signature="e#3517#3581#0" />
-            <element signature="e#3758#4174#0" expanded="true" />
-            <element signature="e#3815#4170#0" expanded="true" />
-            <element signature="e#3912#4162#0" expanded="true" />
-            <element signature="e#4421#4569#0" expanded="true" />
-            <element signature="e#4645#5009#0" expanded="true" />
-            <element signature="e#4702#5005#0" expanded="true" />
-            <element signature="e#4799#4997#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-            <element signature="e#5064#5065#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/page/class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1286,6 +1238,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/profile/myCourse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#55#351#0" expanded="true" />
+            <element signature="e#244#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <folding>
+            <element signature="e#98#99#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/class/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="119" lean-forward="true" selection-start-column="119" selection-end-column="119" />
+          <folding>
+            <element signature="e#106#310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#61#62#0" expanded="true" />
+            <element signature="e#124#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/register/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="63" lean-forward="true" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
+          <folding>
+            <element signature="e#61#506#0" expanded="true" />
+            <element signature="e#255#502#0" expanded="true" />
+            <element signature="e#990#1164#0" expanded="true" />
+            <element signature="e#1162#1211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/page/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/delete/class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1297,35 +1314,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/delete/course.js">
+    <entry file="file://$PROJECT_DIR$/app/views/page/course.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="254">
+          <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="143">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/UserDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
           <folding>
-            <element signature="e#61#62#0" expanded="true" />
-            <element signature="e#124#125#0" expanded="true" />
+            <element signature="e#74#75#0" expanded="true" />
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#623#895#0" expanded="true" />
+            <element signature="e#692#887#0" expanded="true" />
+            <element signature="e#792#858#0" expanded="true" />
+            <element signature="e#1544#1816#0" expanded="true" />
+            <element signature="e#1613#1808#0" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
+            <element signature="e#1761#1762#0" expanded="true" />
+            <element signature="e#1939#2833#0" expanded="true" />
+            <element signature="e#2629#2825#0" expanded="true" />
+            <element signature="e#2730#2731#0" expanded="true" />
+            <element signature="e#2778#2779#0" expanded="true" />
+            <element signature="e#2891#3194#0" expanded="true" />
+            <element signature="e#2947#3190#0" expanded="true" />
+            <element signature="e#3015#3182#0" expanded="true" />
+            <element signature="e#3094#3160#0" expanded="true" />
+            <element signature="e#3253#3689#0" expanded="true" />
+            <element signature="e#3309#3685#0" expanded="true" />
+            <element signature="e#3377#3677#0" expanded="true" />
+            <element signature="e#3451#3665#0" expanded="true" />
+            <element signature="e#3758#4174#0" expanded="true" />
+            <element signature="e#3815#4170#0" expanded="true" />
+            <element signature="e#3912#4162#0" expanded="true" />
+            <element signature="e#4324#4577#0" expanded="true" />
+            <element signature="e#4421#4569#0" expanded="true" />
+            <element signature="e#4648#4857#0" expanded="true" />
+            <element signature="e#5053#5298#0" expanded="true" />
+            <element signature="e#5146#5250#0" expanded="true" />
+            <element signature="e#5264#5265#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
+            <element signature="e#5468#5819#0" expanded="true" />
+            <element signature="e#5544#5816#0" expanded="true" />
+            <element signature="e#5739#5740#0" expanded="true" />
+            <element signature="e#5871#5872#0" expanded="true" />
+            <element signature="e#4645#5009#0" expanded="true" />
+            <element signature="e#4702#5005#0" expanded="true" />
+            <element signature="e#4799#4997#0" expanded="true" />
+            <element signature="e#5042#5043#0" expanded="true" />
+            <element signature="e#5064#5065#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/register/class.js">
+    <entry file="file://$PROJECT_DIR$/app/views/register/class.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+        <state relative-caret-position="237">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/delete/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding>
+            <element signature="e#61#62#0" expanded="true" />
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#690#1072#0" expanded="true" />
+            <element signature="e#871#1270#0" expanded="true" />
+            <element signature="e#996#1734#0" expanded="true" />
+            <element signature="e#1523#1684#0" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/delete/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#382#781#0" expanded="true" />
+            <element signature="e#452#773#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/CourseDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+        <state relative-caret-position="324">
+          <caret line="185" column="23" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
           <folding>
             <element signature="e#76#77#0" expanded="true" />
             <element signature="e#115#116#0" expanded="true" />
@@ -1342,9 +1434,8 @@
             <element signature="e#1310#1450#0" expanded="true" />
             <element signature="e#1689#2331#0" expanded="true" />
             <element signature="e#1833#2319#0" expanded="true" />
-            <element signature="e#2405#2712#0" expanded="true" />
-            <element signature="e#2461#2708#0" expanded="true" />
-            <element signature="e#2531#2700#0" expanded="true" />
+            <element signature="e#2406#2808#0" expanded="true" />
+            <element signature="e#2792#3176#0" expanded="true" />
             <element signature="e#2955#2956#0" expanded="true" />
             <element signature="e#3039#3040#0" expanded="true" />
             <element signature="e#3154#3222#0" />
@@ -1357,68 +1448,28 @@
             <element signature="e#3614#4370#0" expanded="true" />
             <element signature="e#3712#4362#0" expanded="true" />
             <element signature="e#3807#3876#0" expanded="true" />
-            <element signature="e#3978#3983#0" expanded="true" />
             <element signature="e#4107#4863#0" expanded="true" />
             <element signature="e#4140#4141#0" expanded="true" />
             <element signature="e#4222#4223#0" expanded="true" />
-            <element signature="e#5180#5837#0" expanded="true" />
-            <element signature="e#5276#5833#0" expanded="true" />
-            <element signature="e#5346#5825#0" expanded="true" />
-            <element signature="e#5428#5814#0" expanded="true" />
-            <element signature="e#5532#5533#0" expanded="true" />
-            <element signature="e#5604#5605#0" expanded="true" />
-            <element signature="e#5900#6244#0" expanded="true" />
+            <element signature="e#4432#4989#0" expanded="true" />
+            <element signature="e#4584#4970#0" expanded="true" />
+            <element signature="e#4688#4689#0" expanded="true" />
+            <element signature="e#4760#4761#0" expanded="true" />
             <element signature="e#5956#6240#0" expanded="true" />
             <element signature="e#6026#6232#0" expanded="true" />
             <element signature="e#6138#6139#0" expanded="true" />
             <element signature="e#6186#6187#0" expanded="true" />
-            <element signature="e#6299#6601#0" expanded="true" />
             <element signature="e#6355#6597#0" expanded="true" />
             <element signature="e#6425#6589#0" expanded="true" />
             <element signature="e#6495#6496#0" expanded="true" />
             <element signature="e#6543#6544#0" expanded="true" />
-            <element signature="e#6663#6992#0" expanded="true" />
             <element signature="e#6719#6988#0" expanded="true" />
             <element signature="e#6789#6980#0" expanded="true" />
             <element signature="e#7084#7150#0" expanded="true" />
-            <element signature="e#7076#7356#0" expanded="true" />
             <element signature="e#7133#7352#0" expanded="true" />
             <element signature="e#7204#7344#0" expanded="true" />
-            <element signature="e#7411#7659#0" expanded="true" />
-            <element signature="e#7468#7655#0" expanded="true" />
-            <element signature="e#7539#7647#0" expanded="true" />
             <element signature="e#7690#7691#0" expanded="true" />
             <element signature="e#7714#7715#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/profile/myCourse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="e#55#351#0" expanded="true" />
-            <element signature="e#244#369#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/page/course.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
           </folding>
         </state>
       </provider>

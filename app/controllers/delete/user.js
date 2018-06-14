@@ -12,17 +12,37 @@ module.exports.conclude = function (application, req, res) {
         email: req.session.data.email,
         password: password
     };
+    let user = req.session.data;
     console.log(req.body.password);
     if (password == req.session.data.password) {
         userDAO.check(data, function (result) {
             if (result.length > 0) {
-                userDAO.deleteUser(req.session.data, function () {
-                    courseDAO.deleteCourseBecauseTheInstructorHasBeenDeleted(req.session.data);
-                    req.session.data = {
-                        _id: "",
-                        autorizado:false
-                    }
+                const courseId = result[0]._id;
+                let courseSelected ;
+                userDAO.getStudentsOfCourse(courseId, function (userHascourse) {
+                    userDAO.manageMyCourse(user, function (courses) {
+                        // console.log(courses);
+                        for(let i = 0;i<courses.length;i++){
+                            // console.log("courses[i]");
+                            // console.log(courses[i]);
+                            courseSelected = courses[i].course[0]._id;
+                            // console.log("to aqui porra");
+                            // console.log(courseSelected);
+                            userDAO.removeCourseFromAllStudents(courseSelected, userHascourse,function () {
+                                courseDAO.deleteCourse(courseSelected,function () {
+                                    userDAO.deleteUser(user);
+                                });
+                            });
+                        }
+                    });
                 });
+                // userDAO.deleteUser(req.session.data, function () {
+                //     courseDAO.deleteCourseBecauseTheInstructorHasBeenDeleted(req.session.data);
+                //     req.session.data = {
+                //         _id: "",
+                //         autorizado:false
+                //     }
+                // });
             }
         });
 

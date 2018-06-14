@@ -113,9 +113,10 @@ UserDAO.prototype.check = function (data, callback) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("user", function (err, collection) {
             collection.find(data).toArray(function (mongoError, result) {
+                mongoclient.close();
                 callback(result);
             });
-            mongoclient.close();
+
         });
     });
 };
@@ -146,7 +147,7 @@ UserDAO.prototype.editPassword = function (dataAfter, after, data) {
         });
     });
 };
-UserDAO.prototype.deleteUser = function (data, callback) {
+UserDAO.prototype.deleteUser = function (data) {
     let info = objectId(data._id);
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
@@ -154,20 +155,62 @@ UserDAO.prototype.deleteUser = function (data, callback) {
             if (err) throw err;
             collection.remove({_id: info}, 1);
             mongocliente.close();
-            callback();
         });
     });
+};
+UserDAO.prototype.getStudentsOfCourse = function (course_id, callback) {
+    const courseId = objectId(course_id);
+    const project = {
+        "$project": {
+            "has_course": {
+                "$in": [
+                    courseId,
+                    "$courses"
+                ]
+            }
+        }
+    };
+    const match = {
+        "$match": {
+            "has_course": true
+        }
+    };
+    const pipeline = [project, match];
+    console.log(pipeline);
+    this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
+        mongocliente.collection("user", function (err, collection) {
+            collection.aggregate(pipeline, function (err, result) {
+                callback(result);
+            });
+            mongocliente.close();
+        });
+    });
+};
+UserDAO.prototype.removeCourseFromAllStudents = function (courseId, students,callback) {
+    let studentId;
+    this._connection.open(function (err, mongocliente) {
+        if (err) throw err;
+        for (let i = 0; i < students.length; i++) {
+            studentId = students[i]._id;
+            mongocliente.collection("user", function (err, collection) {
+                collection.updateOne({"_id": objectId(studentId)}, {"$pull": {"courses": objectId(courseId)}});
+            });
+        }
+        mongocliente.close();
+    });
+    callback();
+
 };
 UserDAO.prototype.registerOnCourse = function (course, data) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {
-            collection.updateOne({email: data.email}, {$push:{courses:objectId(course._id)}});
+            collection.updateOne({email: data.email}, {$push: {courses: objectId(course._id)}});
             mongocliente.close();
         });
     });
 };
-
 
 module.exports = function () {
     return UserDAO;

@@ -63,14 +63,13 @@ CourseDAO.prototype.getClass = function (classes, callback) {
 CourseDAO.prototype.addNewClass = function (course, classe) {
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
-            course.classes.push(classe);
-            collection.update({_id: objectId(course._id)}, course, {upsert: true});
+            collection.updateOne({_id: objectId(course._id)}, {$push: {classes: classe}});
             mongoclient.close();
         });
     });
 };
+
 CourseDAO.prototype.deleteCourseBecauseTheInstructorHasBeenDeleted = function (data) {
-    console.log(objectId(data._id));
     this._connection.open(function (err, mongoclient) {
         mongoclient.collection("course", function (err, collection) {
             collection.deleteMany({"instructor_id": objectId(data._id)});
@@ -119,33 +118,10 @@ CourseDAO.prototype.deleteClass = function (course, classToDelete) {
     this._connection.open(function (err, mongoclient) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
-            collection.updateOne({"_id":objectId(course)}, {$pull: {classes: {number:classToDelete}}})
+            collection.updateOne({"_id": objectId(course)}, {$pull: {classes: {number: classToDelete}}})
         });
     });
 };
-/*let toDel = objectId(toDelete._id);
-this._connection.open(function (err, mongoclient) {
-    mongoclient.collection("course", function (err, collection) {
-        collection.find({_id: toDel}).toArray(function (mongoError, result) {
-            let number = "";
-            for (let i = 0; i < toDelete.number.length - 1; i++) number += toDelete.number[i];
-            collection.findOne({classes: {$elemMatch: {name: classes.name}}}).toArray(function (mongoError, result) {
-                if (mongoError) throw  mongoError;
-                mongoclient.close();
-                var result_classes = result[0].classes;
-                var right_class;
-                for (let i = 0; i < result_classes.length; i++) {
-                    if (result_classes[i].name == classes.name) {
-                        right_class = result_classes[i];
-                        break;
-                    }
-                }
-                callback(right_class);
-            });
-            mongoclient.close();
-        })
-    });
-});*/
 
 //don't work yet
 CourseDAO.prototype.editClass = function (toDelete, info) {
@@ -202,11 +178,12 @@ CourseDAO.prototype.updateCourse = function (courseBefore, req, res, courseAfter
         });
     });
 };
-CourseDAO.prototype.deleteCourse = function (Course) {
+CourseDAO.prototype.deleteCourse = function (Course,callback) {
     this._connection.open(function (err, mongocliente) {
         mongocliente.collection("course", function (err, collection) {
-            collection.remove({_id: objectId(Course._id)}, 1);
+            collection.remove({_id: objectId(Course)}, 1);
             mongocliente.close();
+            callback();
         });
     });
 };
