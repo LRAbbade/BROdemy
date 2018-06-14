@@ -61,14 +61,15 @@ UserDAO.prototype.manageMyCourse = function (user, callback) {
     };
 
     const pipeline = [match, lookup, project];
-
+    var aux2;
     this._connection.open(function (err, mongocliente) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.aggregate(pipeline, function (err, result) {
-                callback(result);
+                aux2 = result;
+                mongocliente.close();
+                callback(aux2);
             });
-            mongocliente.close();
         });
     });
 };
@@ -142,7 +143,6 @@ UserDAO.prototype.editPassword = function (dataAfter, after, data) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.update({_id: aux}, after, {upsert: true});
-            console.log("senha alterada com sucesso");
             mongocliente.close();
         });
     });
@@ -176,7 +176,6 @@ UserDAO.prototype.getStudentsOfCourse = function (course_id, callback) {
         }
     };
     const pipeline = [project, match];
-    console.log(pipeline);
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         mongocliente.collection("user", function (err, collection) {

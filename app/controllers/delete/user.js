@@ -13,44 +13,36 @@ module.exports.conclude = function (application, req, res) {
         password: password
     };
     let user = req.session.data;
-    console.log(req.body.password);
     if (password == req.session.data.password) {
         userDAO.check(data, function (result) {
             if (result.length > 0) {
-                const courseId = result[0]._id;
-                let courseSelected ;
-                userDAO.getStudentsOfCourse(courseId, function (userHascourse) {
-                    userDAO.manageMyCourse(user, function (courses) {
-                        // console.log(courses);
-                        for(let i = 0;i<courses.length;i++){
-                            // console.log("courses[i]");
-                            // console.log(courses[i]);
-                            courseSelected = courses[i].course[0]._id;
-                            // console.log("to aqui porra");
-                            // console.log(courseSelected);
-                            userDAO.removeCourseFromAllStudents(courseSelected, userHascourse,function () {
-                                courseDAO.deleteCourse(courseSelected,function () {
-                                    userDAO.deleteUser(user);
-                                });
-                            });
-                        }
-                    });
-                });
-                // userDAO.deleteUser(req.session.data, function () {
-                //     courseDAO.deleteCourseBecauseTheInstructorHasBeenDeleted(req.session.data);
-                //     req.session.data = {
-                //         _id: "",
-                //         autorizado:false
-                //     }
+                // const courseId = result[0]._id;
+                // let courseSelected ;
+                // userDAO.getStudentsOfCourse(courseId, function (userHascourse) {
+                //     userDAO.manageMyCourse(user, function (arr_courses) {
+                //         let courses = arr_courses[0].course;
+                //         for(let i = 0;i<courses.length;i++){
+                //             courseSelected = courses[i]._id;
+                //             userDAO.removeCourseFromAllStudents(courseSelected, userHascourse,function () {
+                //         //         courseDAO.deleteCourse(courseSelected,function () {
+                //         //             userDAO.deleteUser(user);
+                //         //         });
+                //             });
+                //         }
+                //     });
                 // });
+                userDAO.deleteUser(req.session.data);
+                req.session.destroy(function (error) {
+                    res.redirect('/');
+                });
+            }else{
+                res.redirect('/');
             }
-        });
 
-        res.redirect('/');
+        });
     } else {
         //criar uma mesnageme falando que a senha está errada.
     }
 
 
 };
-

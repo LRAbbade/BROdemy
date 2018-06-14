@@ -12,8 +12,6 @@ module.exports.show = function (application, req, res) {
     });
 };
 
-
-
 module.exports.register = function (application, req, res) {
     let course = req.params;
     const connection = application.config.dbConnection;
