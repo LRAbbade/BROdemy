@@ -3,9 +3,9 @@ module.exports.show = function (application, req, res) {
     const userDAO = new application.app.models.UserDAO(connection);
 
     userDAO.manageMyCourse(req.session.data, function (result) {
-       
+       let courses = result[0].course
         if(result[0].total_courses !==  0){
-            res.render('profile/mycourse', {inform: result, user: req.session.data,manage:true});
+            res.render('profile/myCourseManage', {inform: courses, user: req.session.data,manage:true});
         } else{
             res.render('profile/manageNoCourses', { user: req.session.data,manage:true});
         }
