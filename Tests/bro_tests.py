@@ -20,6 +20,19 @@ class BRO_tests(unittest.TestCase):
         login_buttons = browser.find_elements_by_tag_name("button")
         self.assertEqual(len(login_buttons), 1)
         print("[SUCCESS] Found buttons in login")
+        # find input elements and check if there are two
+        inputs = browser.find_elements_by_class_name("text-input-single-line")
+        self.assertEqual(len(inputs), 2)
+        print("[SUCCESS] Found two input elements in login page")
+        # get input names and type account information (account should be already registered)
+        inputs = [(i, i.get_attribute("name")) for i in inputs]
+        for i, name in inputs:
+            if name == 'email':
+                i.send_keys("wrong@email.com")
+            elif name == 'password':
+                i.send_keys("not_exist")
+            else:
+                print("[FAIL] Unexpected element name in login")
         # click login with all fields empty
         login_btn = login_buttons[0]
         login_btn.click()
@@ -51,9 +64,9 @@ class BRO_tests(unittest.TestCase):
         inputs = [(i, i.get_attribute("name")) for i in inputs]
         for i, name in inputs:
             if name == 'email':
-                i.send_keys("maria@gmail.com")
+                i.send_keys("lucas@gmail.com")
             elif name == 'password':
-                i.send_keys("m1234")
+                i.send_keys("l1234")
             else:
                 print("[FAIL] Unexpected element name in login")
         # click login and get account buttons
