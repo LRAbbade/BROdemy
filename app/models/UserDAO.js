@@ -77,6 +77,11 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
     this._connection.open(function (err, mongocliente) {
         if (err) throw err;
         let aux = objectId(user._id);
+        const match1 = {
+            "$match": {
+                "_id": aux
+            }
+        };
         const unwind = {
             "$unwind": "$courses"
         };
@@ -91,15 +96,21 @@ UserDAO.prototype.showMyCourses = function (user, callback) {
         };
         const project = {
             "$project": {
+                "has_course" : {
+                    "$size" : "$course"
+                },
                 "course": 1
             }
         };
-        const match = {
-            "$match": {
-                "_id": aux
+        const match2 = {
+            "$match" : {
+                "has_course" : {
+                    "$gt" : 0
+                }
             }
-        };
-        const pipeline = [match, unwind, lookup, project];
+        }
+
+        const pipeline = [match1, unwind, lookup, project, match2];
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
 
