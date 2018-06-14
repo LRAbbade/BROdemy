@@ -10,24 +10,24 @@
 <div class="info-box">
     <form action="/register_user" method="post">
         <div class="row">
+            <i class="material-icons prefix">email</i>
+            <label class="input-label">E-mail:
+                <input class="text-input-single-line" name="email" type="email"
+                       value="<%= student.email %>" required>
+            </label>
+        </div>
+        <div class="row">
             <i class="material-icons prefix">account_circle</i>
             <label class="input-label">Nome:
                 <input class="text-input-single-line" name="name" type="text"
-                       value="<%= student.name %>">
+                       value="<%= student.name %>" required>
             </label>
         </div>
         <div class="row">
             <i class="material-icons prefix">vpn_key</i>
             <label class="input-label">Senha:
                 <input class="text-input-single-line" name="password" type="password"
-                       value="<%= student.password %>" minlength="5" maxlength="20">
-            </label>
-        </div>
-        <div class="row">
-            <i class="material-icons prefix">email</i>
-            <label class="input-label">E-mail:
-                <input class="text-input-single-line" name="email" type="email"
-                       value="<%= student.email %>">
+                       value="<%= student.password %>" minlength="5" maxlength="20" required>
             </label>
         </div>
         <div class="row">
