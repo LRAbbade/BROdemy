@@ -20,13 +20,13 @@
 <% if(inform.length > 0){ %>
 <% for(var i = 0; i < inform.length; i++) { %>
 
-<div class="course-display" onclick="window.location='/course/<%= inform[i].course[0]._id; %>'">
+<div class="course-display" onclick="window.location='/course/<%= inform[i]._id; %>'">
     <div class="course-img">
-        <img src="<%= inform[i].course[0].image_src %>" height="135" width="240">
+        <img src="<%= inform[i].image_src %>" height="135" width="240">
     </div>
     <div class="course-content">
-        <h3 id="course-title"><%= inform[i].course[0].name %></h3>
-        <p><%= inform[i].course[0].description %></p>
+        <h3 id="course-title"><%= inform[i].name %></h3>
+        <p><%= inform[i].description %></p>
     </div>
 </div>
 <% } %>

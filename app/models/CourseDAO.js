@@ -113,8 +113,6 @@ CourseDAO.prototype.checkIfClassNumberIsInCourse = function (courseId, classNumb
     });
 };
 CourseDAO.prototype.deleteClass = function (course, classToDelete) {
-    console.log(course);
-    console.log(classToDelete);
     this._connection.open(function (err, mongoclient) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
@@ -179,9 +177,11 @@ CourseDAO.prototype.updateCourse = function (courseBefore, req, res, courseAfter
     });
 };
 CourseDAO.prototype.deleteCourse = function (Course,callback) {
+    console.log("Course:")
+    console.log(Course)
     this._connection.open(function (err, mongocliente) {
         mongocliente.collection("course", function (err, collection) {
-            collection.remove({_id: objectId(Course)}, 1);
+            collection.deleteOne({_id: objectId(Course)});
             mongocliente.close();
             callback();
         });
