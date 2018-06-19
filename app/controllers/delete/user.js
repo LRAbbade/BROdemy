@@ -1,5 +1,5 @@
 module.exports.renderForm = function (application, req, res) {
-    res.render("delete/user", {user: req.session.data});
+    res.render("delete/user", {user: req.session.data,validacao:[]});
 };
 module.exports.conclude = function (application, req, res) {
     const sha256 = require('sha256');
@@ -26,6 +26,9 @@ module.exports.conclude = function (application, req, res) {
 
         });
     } else {
-        //criar uma mesnageme falando que a senha está errada.
+        let validacao = [{
+            msg: "Senha digitada incorretamente"
+        }]
+        res.render("delete/user", {user: req.session.data,validacao:validacao});
     }
 };
