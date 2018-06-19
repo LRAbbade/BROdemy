@@ -14,18 +14,12 @@ module.exports.checkTochange = function (application, req, res) {
         passwordAfter2: req.body.passwordAfter2
     };
     let msgToSend;
-    console.log("senha velha");
-    console.log(data.passwordBefore);
-    console.log("nova senha");
-    console.log(data.passwordAfter);
-    console.log(data);
     if (data.passwordBefore === req.session.data.password) {
         if (newPassword.passwordAfter === newPassword.passwordAfter2) {
             const connection = application.config.dbConnection;
             const userDAO = new application.app.models.UserDAO(connection);
             let data = req.session.data._id;
             let aux = newPassword.passwordAfter;
-            console.log(aux);
             let passwordCrypto = sha256(aux);
             let after = {
                 email: req.session.data.email,

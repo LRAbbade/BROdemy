@@ -16,21 +16,6 @@ module.exports.conclude = function (application, req, res) {
     if (password == req.session.data.password) {
         userDAO.check(data, function (result) {
             if (result.length > 0) {
-                // const courseId = result[0]._id;
-                // let courseSelected ;
-                // userDAO.getStudentsOfCourse(courseId, function (userHascourse) {
-                //     userDAO.manageMyCourse(user, function (arr_courses) {
-                //         let courses = arr_courses[0].course;
-                //         for(let i = 0;i<courses.length;i++){
-                //             courseSelected = courses[i]._id;
-                //             userDAO.removeCourseFromAllStudents(courseSelected, userHascourse,function () {
-                //         //         courseDAO.deleteCourse(courseSelected,function () {
-                //         //             userDAO.deleteUser(user);
-                //         //         });
-                //             });
-                //         }
-                //     });
-                // });
                 userDAO.deleteUser(req.session.data);
                 req.session.destroy(function (error) {
                     res.redirect('/');
@@ -43,6 +28,4 @@ module.exports.conclude = function (application, req, res) {
     } else {
         //criar uma mesnageme falando que a senha está errada.
     }
-
-
 };
