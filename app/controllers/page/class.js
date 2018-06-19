@@ -7,6 +7,8 @@ module.exports.show = function (application, req, res) {
         _id:req.params._id,
         number : req.params.id
     };
+    console.log("class.js Aux:")
+    console.log(aux)
     courseDAO.checkOwnerOfCourse(aux, function (result) {
         if (result.instructor_id == req.session.data._id) {
             courseDAO.getClass(aux, function (classes) {
@@ -16,6 +18,8 @@ module.exports.show = function (application, req, res) {
             userDAO.checkIfUserHasCourse(req.session.data, aux, function (result) {
                 if (result[0].has_course) {
                     courseDAO.getClass(aux, function (classes) {
+                        console.log("getClass classes")
+                        console.log(classes)
                         res.render("page/class", {classes: classes, user: req.session.data})
                     });
                 } else {
@@ -25,4 +29,3 @@ module.exports.show = function (application, req, res) {
         }
     });
 };
-

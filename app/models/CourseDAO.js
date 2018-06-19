@@ -44,7 +44,7 @@ CourseDAO.prototype.getClass = function (classes, callback) {
         if (err) throw err;
         mongoclient.collection("course", function (err, collection) {
             if (err) throw err;
-            collection.find({classes: {$elemMatch: {number: classes.number}}}).toArray(function (mongoError, result) {
+            collection.find({_id:objectId(classes._id), classes: {$elemMatch: {number: classes.number}}}).toArray(function (mongoError, result) {
                 if (mongoError) throw  mongoError;
                 var result_classes = result[0].classes;
                 var right_class;
