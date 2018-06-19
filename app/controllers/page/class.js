@@ -14,7 +14,7 @@ module.exports.show = function (application, req, res) {
             });
         } else {
             userDAO.checkIfUserHasCourse(req.session.data, aux, function (result) {
-                if (result[0].has_course) {
+                if (result) {
                     courseDAO.getClass(aux, function (classes) {
                         res.render("page/class", {classes: classes, user: req.session.data})
                     });
