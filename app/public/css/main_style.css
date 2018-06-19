@@ -177,11 +177,17 @@ footer {
 .course-img {
     float: left;
     height: 100%;
+    padding: 10px;
 }
 
 .course-content {
     padding: 10px 10px 10px 20px;
     overflow: hidden;
+}
+
+.course-content p {
+    vertical-align: bottom;
+    padding-top: 10px;
 }
 
 #course-title {
