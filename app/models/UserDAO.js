@@ -27,8 +27,9 @@ UserDAO.prototype.checkIfUserHasCourse = function (user, course, callback) {
         mongocliente.collection("user", function (err, collection) {
             if (err) throw err;
             collection.aggregate(pipeline, function (err, result) {
+                let has_course = result[0].has_course
                 mongocliente.close();
-                callback(result);
+                callback(has_course);
             });
 
         });
