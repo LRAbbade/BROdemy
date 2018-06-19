@@ -24,9 +24,11 @@
         <button id="delete-btn" class="std-btn" type="submit">Deletar Curso</button>
     </form>
     <% }else{ %>
-    <form action="/register_on_course/<%= course._id %> %>" method="post">
-        <button class="top-bar-btn" id="course-action-button" type="submit">Inscreva-se neste curso</button>
-    </form>
+        <% if(!haveThisCourse){ %>
+        <form action="/register_on_course/<%= course._id %> %>" method="post">
+            <button class="top-bar-btn" id="course-action-button" type="submit">Inscreva-se neste curso</button>
+        </form>
+        <% } %>
     <% } %>
 </div>
 <% for(let i = 0;i < course.classes.length; i++){ %>
