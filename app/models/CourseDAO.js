@@ -176,14 +176,11 @@ CourseDAO.prototype.updateCourse = function (courseBefore, req, res, courseAfter
         });
     });
 };
-CourseDAO.prototype.deleteCourse = function (Course,callback) {
-    console.log("Course:")
-    console.log(Course)
+CourseDAO.prototype.deleteCourse = function (Course) {
     this._connection.open(function (err, mongocliente) {
         mongocliente.collection("course", function (err, collection) {
             collection.deleteOne({_id: objectId(Course)});
             mongocliente.close();
-            callback();
         });
     });
 };
