@@ -4,9 +4,9 @@
   "description": "site de compras do walmart",
   "main": "eng_software.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node app"
   },
-  "author": "Mazzon",
+  "author": "Abbade, Mazzon",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",
