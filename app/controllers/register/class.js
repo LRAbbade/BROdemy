@@ -4,7 +4,7 @@ module.exports.renderForm = function (application, req, res) {
 
     courseDAO.checkOwnerOfCourse(req.params, function (result) {
         if (result.instructor_id == req.session.data._id) {
-            res.render("register/class", {user: req.session.data, class: {}, courses: result});
+            res.render("register/class", {user: req.session.data, class: {}, courses: result,validacao:{}});
         } else {
             res.redirect('/course/' + result._id);
         }
@@ -30,7 +30,15 @@ module.exports.conclude = function (application, req, res) {
                     courseDAO.addNewClass(data, info);
                     res.redirect('/course/' + result._id);
                 } else {
-                    res.render("register/class", {user: req.session.data, class: info, courses: result});
+                    let validacao = [{
+                        msg: "Numero da aula ja registrado"
+                    }];
+                    res.render("register/class", {
+                        user: req.session.data,
+                        class: info,
+                        courses: result,
+                        validacao: validacao
+                    });
                 }
             });
         } else {
