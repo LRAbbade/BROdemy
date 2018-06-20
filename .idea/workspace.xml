@@ -9,7 +9,9 @@
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/delete/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/delete/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/profile/password.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/profile/password.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/register/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/register/course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/delete/user.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/delete/user.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/register/course.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/register/course.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/register/user.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/register/user.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,24 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/delete/user.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/delete/course.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="course.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/page/course.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,11 +32,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="password.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="password.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/profile/password.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="340">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding>
+                <element signature="e#57#58#0" expanded="true" />
+                <element signature="e#142#143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="44" column="81" lean-forward="true" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+              <folding>
+                <element signature="e#61#62#0" expanded="true" />
+                <element signature="e#124#125#0" expanded="true" />
+                <element signature="e#186#1368#0" expanded="true" />
+                <element signature="e#944#1364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/register/course.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="19" column="69" lean-forward="true" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/page/course.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+              <folding>
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/register/user.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="41" selection-start-line="41" selection-end-line="45" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -78,45 +121,6 @@
               <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding>
                 <element signature="e#106#300#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/delete/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="42" column="72" lean-forward="true" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
-              <folding>
-                <element signature="e#61#141#0" expanded="true" />
-                <element signature="e#195#1176#0" expanded="true" />
-                <element signature="e#700#985#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/register/class.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="27" column="50" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="50" />
-              <folding>
-                <element signature="e#1189#1519#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myCourse.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/profile/myCourse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-              <folding>
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,14 +184,12 @@
         <option value="$PROJECT_DIR$/app/public/js/materialize.min.js" />
         <option value="$PROJECT_DIR$/app/public/js/select.js" />
         <option value="$PROJECT_DIR$/app/public/css/materialize.css" />
-        <option value="$PROJECT_DIR$/app/views/register/course.ejs" />
         <option value="$PROJECT_DIR$/app/views/register/class.ejs" />
         <option value="$PROJECT_DIR$/app/views/profile/status.ejs" />
         <option value="$PROJECT_DIR$/app/views/profile/changePassword.ejs" />
         <option value="$PROJECT_DIR$/app/views/index.ejs" />
         <option value="$PROJECT_DIR$/app/controllers/search.js" />
         <option value="$PROJECT_DIR$/brodemy_db_adm/adm_db.ipynb" />
-        <option value="$PROJECT_DIR$/app/controllers/register/course.js" />
         <option value="$PROJECT_DIR$/app/routes/search.js" />
         <option value="$PROJECT_DIR$/app/views/search/course.ejs" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -221,6 +223,8 @@
         <option value="$PROJECT_DIR$/app/views/delete/user.ejs" />
         <option value="$PROJECT_DIR$/app/views/page/course.ejs" />
         <option value="$PROJECT_DIR$/app/controllers/profile/password.js" />
+        <option value="$PROJECT_DIR$/app/views/register/course.ejs" />
+        <option value="$PROJECT_DIR$/app/controllers/register/course.js" />
       </list>
     </option>
   </component>
@@ -250,130 +254,130 @@
   <component name="ProjectUserFactors">
     <factor id="binaryFeature:liftShorter">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:liftShorterClasses">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:middleMatching">
       <dailyData date="20-6-2018">
-        <observation name="false" value="26,0" />
+        <observation name="false" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:nonGeneric">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_inResolveScope">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_openedInEditor">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameDirectory">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameLogicalRoot">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sdkOrLibrary">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:templates">
       <dailyData date="20-6-2018">
-        <observation name="false" value="26,0" />
+        <observation name="false" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:accessible">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:expectedType">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:kind">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_groovyReferenceListWeigher">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_javaInheritance">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_referenceList">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:recursion">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="completionFinishedType">
       <dailyData date="20-6-2018">
         <observation name="cancelled" value="110,0" />
         <observation name="explicitSelect" value="6,0" />
-        <observation name="typedSelect" value="20,0" />
+        <observation name="typedSelect" value="22,0" />
       </dailyData>
     </factor>
     <factor id="completionType">
       <dailyData date="20-6-2018">
-        <observation name="BASIC" value="34,0" />
+        <observation name="BASIC" value="36,0" />
       </dailyData>
     </factor>
     <factor id="completionUsage">
       <dailyData date="20-6-2018">
-        <observation name="count" value="136,0" />
+        <observation name="count" value="138,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:grouping">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:mostUsed">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:nameEnd">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:position">
       <dailyData date="20-6-2018">
         <observation name="average" value="0,0" />
-        <observation name="count" value="51,0" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
@@ -381,46 +385,46 @@
     </factor>
     <factor id="doubleFeature:prefix">
       <dailyData date="20-6-2018">
-        <observation name="average" value="-1154,843137" />
-        <observation name="count" value="51,0" />
+        <observation name="average" value="-1154,709091" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="-1152,0" />
         <observation name="min" value="-1203,0" />
-        <observation name="variance" value="73,198379" />
+        <observation name="variance" value="70,624993" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:priority">
       <dailyData date="20-6-2018">
-        <observation name="average" value="-48,647059" />
-        <observation name="count" value="51,0" />
+        <observation name="average" value="-45,181818" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="-1,0" />
         <observation name="min" value="-102,0" />
-        <observation name="variance" value="1639,755173" />
+        <observation name="variance" value="1655,404628" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_explicitlyImported">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_knownElement">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_sameModule">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_samePsiMember">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:query_length">
       <dailyData date="20-6-2018">
         <observation name="average" value="0,0" />
-        <observation name="count" value="51,0" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
@@ -428,32 +432,32 @@
     </factor>
     <factor id="doubleFeature:result_length">
       <dailyData date="20-6-2018">
-        <observation name="average" value="5,784314" />
-        <observation name="count" value="51,0" />
+        <observation name="average" value="5,909091" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="14,0" />
         <observation name="min" value="2,0" />
-        <observation name="variance" value="8,593354" />
+        <observation name="variance" value="8,455654" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sameWords">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:shorter">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:simple">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sorter">
       <dailyData date="20-6-2018">
         <observation name="average" value="1,0" />
-        <observation name="count" value="51,0" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="1,0" />
         <observation name="min" value="1,0" />
         <observation name="variance" value="0,0" />
@@ -461,16 +465,16 @@
     </factor>
     <factor id="doubleFeature:statics">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="26,0" />
+        <observation name="UNDEFINED" value="28,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:stats">
       <dailyData date="20-6-2018">
-        <observation name="average" value="3265,117647" />
-        <observation name="count" value="51,0" />
+        <observation name="average" value="3737,727273" />
+        <observation name="count" value="55,0" />
         <observation name="max" value="9997,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="12787783,920455" />
+        <observation name="variance" value="13730690,853687" />
       </dailyData>
     </factor>
     <factor id="itemPosition">
@@ -495,8 +499,8 @@
     </factor>
     <factor id="timeBetweenTyping">
       <dailyData date="20-6-2018">
-        <observation name="average" value="263,428571" />
-        <observation name="count" value="63,0" />
+        <observation name="average" value="248,243243" />
+        <observation name="count" value="74,0" />
       </dailyData>
     </factor>
   </component>
@@ -571,61 +575,6 @@
               <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="class" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="course" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="delete" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="profile" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="session" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="brodemy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="brodemy" type="b2602c69:ProjectViewProjectNode" />
@@ -753,12 +702,12 @@
       <workItem from="1528895139933" duration="25896000" />
       <workItem from="1528943810737" duration="2177000" />
       <workItem from="1529162545307" duration="6262000" />
-      <workItem from="1529494610151" duration="2740000" />
+      <workItem from="1529494610151" duration="3460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146801000" />
+    <option name="totallyTimeSpent" value="147521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -768,10 +717,10 @@
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.3298969" />
       <window_info id="npm" order="3" sideWeight="0.50066936" side_tool="true" weight="0.25033557" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3298969" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49933067" visible="true" weight="0.26040268" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49933067" visible="true" weight="0.26040268" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" sideWeight="0.50159234" side_tool="true" weight="0.21073826" />
@@ -949,13 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/page/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/session/logout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -974,13 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
           <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register/course.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1012,24 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/class/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="41" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1116,13 +1037,6 @@
             <element signature="e#6239#6458#0" expanded="true" />
             <element signature="e#6310#6450#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register/user.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1228,10 +1142,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register/user.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="41" selection-start-line="41" selection-end-line="45" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/profile/password.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="340">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#57#58#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register/course.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="19" column="69" lean-forward="true" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/page/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/page/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding>
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/register/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="44" column="81" lean-forward="true" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+          <folding>
+            <element signature="e#61#62#0" expanded="true" />
+            <element signature="e#124#125#0" expanded="true" />
+            <element signature="e#186#1368#0" expanded="true" />
+            <element signature="e#944#1364#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
