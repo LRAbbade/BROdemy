@@ -1,5 +1,9 @@
 module.exports.renderForm = function (application, req, res) {
-    res.render("delete/user", {user: req.session.data,validacao:[]});
+    let url = {
+        toPost: "/delete_account",
+        redirect: "/my_account"
+    };
+    res.render("delete/user", {user: req.session.data, validacao: [],uri:url});
 };
 module.exports.conclude = function (application, req, res) {
     const sha256 = require('sha256');
@@ -20,7 +24,7 @@ module.exports.conclude = function (application, req, res) {
                 req.session.destroy(function (error) {
                     res.redirect('/');
                 });
-            }else{
+            } else {
                 res.redirect('/');
             }
 
@@ -28,7 +32,11 @@ module.exports.conclude = function (application, req, res) {
     } else {
         let validacao = [{
             msg: "Senha digitada incorretamente"
-        }]
-        res.render("delete/user", {user: req.session.data,validacao:validacao});
+        }];
+        let url = {
+            toPost: "/delete_account",
+            redirect: "/my_account"
+        };
+        res.render("delete/user", {user: req.session.data, validacao: validacao, uri: url});
     }
 };

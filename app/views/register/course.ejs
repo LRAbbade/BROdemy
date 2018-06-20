@@ -7,6 +7,13 @@
 </head>
 <body>
 <%- include ../navbar.ejs %>
+
+<% if(validacao.length > 0){ %>
+<div class="info-box">
+    <p id="no-courses-error"><strong><%= validacao[0].msg %></strong></p>
+</div>
+<% } %>
+
 <div class='info-box'>
     <h2>Registrar Curso</h2>
 </div>

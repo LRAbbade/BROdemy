@@ -1,5 +1,5 @@
 module.exports.renderForm = function (application, req, res) {
-    res.render("register/course", {user: req.session.data});
+    res.render("register/course", {user: req.session.data,course :{},validacao :{}});
 };
 module.exports.conclude = function (application, req, res) {
     var objectId = require('mongodb').ObjectId;
@@ -37,7 +37,7 @@ module.exports.conclude = function (application, req, res) {
                     "msg": "O nome deste custo ja existe",
                 }],
                 course: course,
-                user: {}
+                user: req.session.data
             });
         }
     });

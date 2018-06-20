@@ -15,7 +15,7 @@
 <% } %>
 
 <div class="info-box">
-    <form action="/delete_account" method="post">
+    <form action="<%= uri.toPost %>" method="post">
         <h2>Deseja mesmo deletar?</h2>
         <div class="row">
             <label>Digite sua senha para confirmar a ação:
@@ -24,7 +24,7 @@
         </div>
         <button class="std-btn" type="submit">Sim</button>
         <input class="std-btn" type="button" name="nao-btn" value="Não"
-               onclick="window.location='/my_account';">
+               onclick="window.location='<%= uri.redirect %>';">
     </form>
 </div>
 </body>

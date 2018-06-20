@@ -16,22 +16,28 @@ module.exports.checkTochange = function (application, req, res) {
     let msgToSend;
     if (data.passwordBefore === req.session.data.password) {
         if (newPassword.passwordAfter === newPassword.passwordAfter2) {
-            const connection = application.config.dbConnection;
-            const userDAO = new application.app.models.UserDAO(connection);
-            let data = req.session.data._id;
-            let aux = newPassword.passwordAfter;
-            let passwordCrypto = sha256(aux);
-            let after = {
-                email: req.session.data.email,
-                name: req.session.data.name,
-                courses: req.session.data.courses,
-                password: passwordCrypto
-            };
+            if (data.passwordBefore === sha256(newPassword.passwordAfter)) {
+                msgToSend = [{msg: "Você está tentando mudar para mesma senha,DUDE!"}];
+                res.render("profile/changepassword", {user: user, validacao: msgToSend});
+            }
+            else {
+                const connection = application.config.dbConnection;
+                const userDAO = new application.app.models.UserDAO(connection);
+                let data = req.session.data._id;
+                let aux = newPassword.passwordAfter;
+                let passwordCrypto = sha256(aux);
+                let after = {
+                    email: req.session.data.email,
+                    name: req.session.data.name,
+                    courses: req.session.data.courses,
+                    password: passwordCrypto
+                };
 
-            userDAO.editPassword(after.password, after, data);
-            msgToSend = [{msg: "senha alterada com sucesso"}];
-            req.session.data.password = after.password;
-            res.render("profile/status", {user: user, validacao: msgToSend});
+                userDAO.editPassword(after.password, after, data);
+                msgToSend = [{msg: "senha alterada com sucesso"}];
+                req.session.data.password = after.password;
+                res.render("profile/status", {user: user, validacao: msgToSend});
+            }
         } else {
             msgToSend = [{msg: "as senhas não são iguais"}];
             res.render("profile/changepassword", {user: req.session.data, validacao: msgToSend});
