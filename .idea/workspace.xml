@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/delete/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/delete/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/profile/password.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/profile/password.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/delete/user.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/delete/user.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/register/user.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/register/user.ejs" afterDir="false" />
     </list>
@@ -38,11 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="course.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="course.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/page/course.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
               <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="password.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/profile/password.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -108,15 +118,6 @@
                 <element signature="e#244#245#0" expanded="true" />
                 <element signature="e#346#347#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/register/class.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -201,7 +202,6 @@
         <option value="$PROJECT_DIR$/app/routes/class/register.js" />
         <option value="$PROJECT_DIR$/app/controllers/register/user.js" />
         <option value="$PROJECT_DIR$/app/views/login.ejs" />
-        <option value="$PROJECT_DIR$/app/controllers/profile/password.js" />
         <option value="$PROJECT_DIR$/app/controllers/page/course.js" />
         <option value="$PROJECT_DIR$/app/controllers/session/login.js" />
         <option value="$PROJECT_DIR$/app/controllers/delete/class.js" />
@@ -220,6 +220,7 @@
         <option value="$PROJECT_DIR$/app/controllers/delete/user.js" />
         <option value="$PROJECT_DIR$/app/views/delete/user.ejs" />
         <option value="$PROJECT_DIR$/app/views/page/course.ejs" />
+        <option value="$PROJECT_DIR$/app/controllers/profile/password.js" />
       </list>
     </option>
   </component>
@@ -249,130 +250,130 @@
   <component name="ProjectUserFactors">
     <factor id="binaryFeature:liftShorter">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:liftShorterClasses">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:middleMatching">
       <dailyData date="20-6-2018">
-        <observation name="false" value="14,0" />
+        <observation name="false" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:nonGeneric">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_inResolveScope">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_openedInEditor">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameDirectory">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameLogicalRoot">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sdkOrLibrary">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:templates">
       <dailyData date="20-6-2018">
-        <observation name="false" value="14,0" />
+        <observation name="false" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:accessible">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:expectedType">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:kind">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_groovyReferenceListWeigher">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_javaInheritance">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:prox_referenceList">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="categorialFeature:recursion">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="completionFinishedType">
       <dailyData date="20-6-2018">
-        <observation name="cancelled" value="62,0" />
-        <observation name="explicitSelect" value="1,0" />
-        <observation name="typedSelect" value="13,0" />
+        <observation name="cancelled" value="110,0" />
+        <observation name="explicitSelect" value="6,0" />
+        <observation name="typedSelect" value="20,0" />
       </dailyData>
     </factor>
     <factor id="completionType">
       <dailyData date="20-6-2018">
-        <observation name="BASIC" value="19,0" />
+        <observation name="BASIC" value="34,0" />
       </dailyData>
     </factor>
     <factor id="completionUsage">
       <dailyData date="20-6-2018">
-        <observation name="count" value="76,0" />
+        <observation name="count" value="136,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:grouping">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:mostUsed">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:nameEnd">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:position">
       <dailyData date="20-6-2018">
         <observation name="average" value="0,0" />
-        <observation name="count" value="27,0" />
+        <observation name="count" value="51,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
@@ -380,46 +381,46 @@
     </factor>
     <factor id="doubleFeature:prefix">
       <dailyData date="20-6-2018">
-        <observation name="average" value="-1156,62963" />
-        <observation name="count" value="27,0" />
+        <observation name="average" value="-1154,843137" />
+        <observation name="count" value="51,0" />
         <observation name="max" value="-1152,0" />
         <observation name="min" value="-1203,0" />
-        <observation name="variance" value="96,925145" />
+        <observation name="variance" value="73,198379" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:priority">
       <dailyData date="20-6-2018">
-        <observation name="average" value="-16,259259" />
-        <observation name="count" value="27,0" />
+        <observation name="average" value="-48,647059" />
+        <observation name="count" value="51,0" />
         <observation name="max" value="-1,0" />
-        <observation name="min" value="-101,0" />
-        <observation name="variance" value="872,09115" />
+        <observation name="min" value="-102,0" />
+        <observation name="variance" value="1639,755173" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_explicitlyImported">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_knownElement">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_sameModule">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_samePsiMember">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:query_length">
       <dailyData date="20-6-2018">
         <observation name="average" value="0,0" />
-        <observation name="count" value="27,0" />
+        <observation name="count" value="51,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
@@ -427,32 +428,32 @@
     </factor>
     <factor id="doubleFeature:result_length">
       <dailyData date="20-6-2018">
-        <observation name="average" value="4,259259" />
-        <observation name="count" value="27,0" />
-        <observation name="max" value="8,0" />
+        <observation name="average" value="5,784314" />
+        <observation name="count" value="51,0" />
+        <observation name="max" value="14,0" />
         <observation name="min" value="2,0" />
-        <observation name="variance" value="3,198212" />
+        <observation name="variance" value="8,593354" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sameWords">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:shorter">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:simple">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sorter">
       <dailyData date="20-6-2018">
         <observation name="average" value="1,0" />
-        <observation name="count" value="27,0" />
+        <observation name="count" value="51,0" />
         <observation name="max" value="1,0" />
         <observation name="min" value="1,0" />
         <observation name="variance" value="0,0" />
@@ -460,38 +461,42 @@
     </factor>
     <factor id="doubleFeature:statics">
       <dailyData date="20-6-2018">
-        <observation name="UNDEFINED" value="14,0" />
+        <observation name="UNDEFINED" value="26,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:stats">
       <dailyData date="20-6-2018">
-        <observation name="average" value="359,740741" />
-        <observation name="count" value="27,0" />
-        <observation name="max" value="9713,0" />
+        <observation name="average" value="3265,117647" />
+        <observation name="count" value="51,0" />
+        <observation name="max" value="9997,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="2716940,511395" />
+        <observation name="variance" value="12787783,920455" />
       </dailyData>
     </factor>
     <factor id="itemPosition">
       <dailyData date="20-6-2018">
-        <observation name="0" value="1,0" />
+        <observation name="0" value="6,0" />
       </dailyData>
     </factor>
     <factor id="mnemonicsUsage">
       <dailyData date="20-6-2018">
-        <observation name="total" value="1,0" />
+        <observation name="total" value="5,0" />
         <observation name="withMnemonics" value="0,0" />
       </dailyData>
     </factor>
     <factor id="prefixLength">
       <dailyData date="20-6-2018">
+        <observation name="1" value="1,0" />
+        <observation name="2" value="2,0" />
+        <observation name="3" value="1,0" />
+        <observation name="4" value="1,0" />
         <observation name="5" value="1,0" />
       </dailyData>
     </factor>
     <factor id="timeBetweenTyping">
       <dailyData date="20-6-2018">
-        <observation name="average" value="294,076923" />
-        <observation name="count" value="39,0" />
+        <observation name="average" value="263,428571" />
+        <observation name="count" value="63,0" />
       </dailyData>
     </factor>
   </component>
@@ -748,12 +753,12 @@
       <workItem from="1528895139933" duration="25896000" />
       <workItem from="1528943810737" duration="2177000" />
       <workItem from="1529162545307" duration="6262000" />
-      <workItem from="1529494610151" duration="1919000" />
+      <workItem from="1529494610151" duration="2740000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145980000" />
+    <option name="totallyTimeSpent" value="146801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -811,6 +816,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="30" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -944,13 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/profile/password.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1223,6 +1225,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/profile/password.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
         </state>
       </provider>
     </entry>
